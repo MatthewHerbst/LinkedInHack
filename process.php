@@ -1,7 +1,7 @@
 <?php
 
 
-$data = $_GET;
+$data = $_GET['packages'];
 
 
 foreach($data as $package) {
