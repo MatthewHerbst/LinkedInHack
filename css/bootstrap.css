@@ -1010,6 +1010,7 @@ pre {
   word-wrap: break-word;
   white-space: pre;
   white-space: pre-wrap;
+  background-image: url(/img/witewall_3.png)
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
   -webkit-border-radius: 4px;
