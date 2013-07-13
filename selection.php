@@ -215,7 +215,7 @@ if(isset($_REQUEST['cmd'])) {
             </td>
       </table>
       <div id="buildVessel" class="proceed">
-        <button class="btn btn-large btn-success" type="button">Build Vessel</button>
+        <button class="btn btn-large btn-success" type="button">Build Project</button>
       </div>
 </form></div>
 
