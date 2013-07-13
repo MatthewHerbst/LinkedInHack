@@ -13,15 +13,11 @@ $user = "";
 $user_pk = "";
 $errorMsg = "";
 $request = "";
-$savedGroups = array();
 
 //See if this person has an open session
 if(isset($_SESSION['user_pk'])) {
 	$user = $_SESSION['user'];
 	$user_pk = $_SESSION['user_pk'];
-	
-	//Get the user's saved groups
-	$savedGroups = getPackageGroups($user);
 	
 	//See if the user is requesting anything
 	if(isset($_REQUEST['cmd'])) {
@@ -34,14 +30,6 @@ if(isset($_SESSION['user_pk'])) {
 			//Send the user to the home screen
 			header("Location: http://174.34.170.64/bootstrap.php");
 		}
-		
-		//See if the user is requesting to load a saved group
-		if($request == "loadGroup") {
-			
-		}
-		
-		//See if the user is requesting to save a new group
-			//Make sure to update the list of saved groups
 	}
 } else { //If they don't, send them to the sign in page
 	header("Location: http://174.34.170.64/signin.php");
@@ -98,7 +86,7 @@ if(isset($_SESSION['user_pk'])) {
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+       <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -106,22 +94,29 @@ if(isset($_SESSION['user_pk'])) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="bootstrap.php">Wingman</a>
-		   <div class="nav-collapse collapse">
-            <form class="navbar-form pull-right" method='post' action='selection.php'>
+          <a class="brand" href="#">Wingman</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
               <li class="dropdown">
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="nav-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="navbar-form pull-right">
+              <input class="span2" type="text" placeholder="Email">
+              <input class="span2" type="password" placeholder="Password">
               <button type="submit" class="btn">Logout</button>
-			  <input type='hidden' name='cmd' value='logout' />
             </form>
           </div><!--/.nav-collapse -->
         </div>
@@ -193,7 +188,6 @@ if(isset($_SESSION['user_pk'])) {
               <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="python" /></span>
               Python
             </td>
-		   </tr>
       </table>
       <div id="buildVessel" class="proceed">
         <input type='submit' class="btn btn-large btn-success" value="Build Project">
