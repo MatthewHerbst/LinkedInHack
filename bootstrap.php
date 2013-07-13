@@ -176,13 +176,6 @@ if(isset($_REQUEST['cmd'])) {
 				<a href='/ubuntu.php'> <img src="/img/ubuntu.png" alt="Ubuntu" width="300" height="300">
 			</div>
 		</div>
-
-		<hr>
-
-		<footer>
-			<p>&copy;Wingman 2013</p>
-		</footer>
-
 	</div> <!-- /container -->
 
     <!-- Le javascript
