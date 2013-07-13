@@ -159,19 +159,15 @@ if(isset($_REQUEST['cmd'])) {
       <div class="row">
         <div class="span4">
           <h2>Windows</h2>
-		  <img src="/img/windows.jpg" alt="Windows" width="100" height="100">
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+		  <img src="/img/windows.jpg" alt="Windows" width="300" height="300">
         </div>
         <div class="span4">
           <h2>Mac</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+		  <img src="/img/apple.gif" alt="Mac" width="300" height="300">
        </div>
         <div class="span4">
           <h2>Ubuntu</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+		  <img src="/img/ubuntu.png" alt="Ubuntu" width="300" height="300">
         </div>
       </div>
 
