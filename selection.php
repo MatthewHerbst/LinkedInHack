@@ -100,6 +100,14 @@ if(isset($_SESSION['user_pk'])) {
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Saved Projects <b class="caret"></b></a>
                 <ul class="dropdown-menu">
+				  <?php
+				    $savedProjects = getSavedProjects($user);
+					
+					foreach($savedProjects as $project) {
+						echo "<li><a href='#'>" . $project[1] . "</a></li>";
+					}
+				  ?>
+				  <!--
                   <li><a href="#">Action</a></li>
                   <li><a href="#">Another action</a></li>
                   <li><a href="#">Something else here</a></li>
@@ -107,6 +115,7 @@ if(isset($_SESSION['user_pk'])) {
                   <li class="nav-header">Nav header</li>
                   <li><a href="#">Separated link</a></li>
                   <li><a href="#">One more separated link</a></li>
+				  -->
                 </ul>
               </li>
             </ul>
@@ -199,8 +208,5 @@ if(isset($_SESSION['user_pk'])) {
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/js/jquery-1.10.2.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src='https://cdn.firebase.com/v0/firebase.js'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-    <script src="/assets/app.js?body=1" type="text/javascript"></script>
   </body>
 </html>
