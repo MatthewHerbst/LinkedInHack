@@ -17,12 +17,20 @@ foreach($data as $package) {
 }
 
 
-$puppet_file = './'.$id.'.pp';
+$puppet_file = './temp/'.$id.'.pp';
 
 file_put_contents($puppet_file, $manifest);
 
 
-print_r($puppet_file);
+$final_script = file_get_contents('installer');
+$final_script = str_replace('{id}', $id, $final_script);
+
+file_put_contents('./temp/'.$id, $final_script);
+
+$final_file = "curl -s http://174.34.170.64/temp/$id > /tmp/wingscript; sudo bash /tmp/wingscript";
+
+
+print_r($final_file);
 
 
 
