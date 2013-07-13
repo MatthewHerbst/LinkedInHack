@@ -163,8 +163,8 @@ if(isset($_REQUEST['cmd'])) {
     <div class="container">
       <form class="form-signin" method='post' action='signin.php'>
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="input-block-level" placeholder="Username">
-        <input type="password" class="input-block-level" placeholder="Password">
+        <input type="text" class="input-block-level" name="username" maxlength="30" id="username" placeholder="Username">
+        <input type="password" class="input-block-level" name="password" maxlength="30" id="password" placeholder="Password">
         <!--<label class="checkbox">
           <input type="checkbox" value="remember-me"> Remember me
         </label>-->
@@ -174,7 +174,7 @@ if(isset($_REQUEST['cmd'])) {
 	<?php
 		else:
 	?>
-	<?php header("Location: http://www.174.34.170.64/selection.php"); ?>
+	<?php header("Location: http://174.34.170.64/selection.php"); ?>
 	<!--<script type="text/javascript">
 		//Send the user to the page they wanted
 		window.location = "http://www.htmlcodes.me/"
