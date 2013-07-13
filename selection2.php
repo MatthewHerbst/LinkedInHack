@@ -129,7 +129,26 @@ if(isset($_SESSION['user_pk'])) {
       <table border=0 class="vesselOptions goods">
 	  <?php
 		$packages = getPackages();
+		//print_r($packages);
 		$columnInterval = count($packages) / 4;
+
+		echo '<table border=0 class="vesselOptions goods"><tr>';
+		$i = 0;
+		foreach($packages as $package) {
+
+			if($i % 2 == 1 && $i != 0) { echo "\n".'<tr>'; }
+			 echo "
+                        <td>
+              <span class='servicebox'><input id='profile_apps_' name='packages[]' type='checkbox' value='" . $packages[0] . "' /></span>
+              " . $package[1] . "
+            </td>";
+			if($i % 2 == 1 && $i != 0) { echo "\n".'</tr>'; }
+			$i++;
+		}
+
+		echo '</table>';
+
+		exit;
 	  ?>
 	  <tr>
 	  <?php
