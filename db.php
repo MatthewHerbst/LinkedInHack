@@ -175,7 +175,7 @@ function createGroup($user, $groupName, $packages) {
 Gets a list of package groups associated with a user
 Returns an array of the data, or an error message if any
 */
-function getPackageGroups($user) {
+function getSavedProjects($user) {
 	global $SAVED_PACKAGES_TABLE;
 	
 	global $SAVED_PACKAGES_TABLE;
