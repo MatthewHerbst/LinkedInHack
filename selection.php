@@ -108,8 +108,12 @@ if(isset($_SESSION['user_pk'])) {
 				  <?php
 				    $savedProjects = getSavedProjects($user);
 					
-					foreach($savedProjects as $project) {
-						echo "<li><a href='#'>" . $project[1] . "</a></li>";
+					if(count($savedProject) > 0) {
+						foreach($savedProjects as $project) {
+							echo "<li><a href='#'>" . $project[1] . "</a></li>";
+						}
+					} else {
+						echo "<li><a href='#'>You have no saved projects</a></li>";
 					}
 				  ?>
 				  <!--
