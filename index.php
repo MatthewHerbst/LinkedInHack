@@ -74,8 +74,11 @@ if(isset($_SESSION['user_pk'])) {
 			} else if(empty($p)) {
 				$errorMsg = "Please enter a password";
 			} else {
-				if (checkUserExist($u)) {
+				if(checkUserExist($u)) {
 					$errorMsg = "Username " . $user . " already exists.";
+					print '<script type="text/javascript">'; 
+					print 'alert("Username already exists")'; 
+					print '</script>'; 
 				} else {
 					$added = addUser($u, $p);
 					if($added == 1) {
