@@ -16,8 +16,10 @@ $message = "";
 $request = "";
 $goingTo = "";
 
-//Check if a command is coming from browser
-
+//Get where this person wants to go
+if(isset($_REQUEST['os'])) {
+	$goingTo = $_REQUEST['os'];
+}
 
 //See if this person has an open session
 if(isset($_SESSION['user_pk'])) {
@@ -32,7 +34,7 @@ if(isset($_REQUEST['cmd'])) {
 	//Check if they are asking to logout
 	if($request == "logout") {
 		unset($_SESSION['user_pk']);
-	} else if($request == "Login") {
+	} else if($request == "login") {
 		$u = $_REQUEST['username'];
 		$p = $_REQUEST['password'];
 		
@@ -55,7 +57,7 @@ if(isset($_REQUEST['cmd'])) {
 				$errorMsg = "Invalid Username/Password";
 			}
 		}
-	} else if($request == "Register") {
+	} else if($request == "register") {
 		$u = $_REQUEST['new_username'];
 		$p = $_REQUEST['new_password'];
 		
@@ -147,13 +149,14 @@ if(isset($_REQUEST['cmd'])) {
 	?>
     <div class="container">
 
-      <form class="form-signin">
+      <form class="form-signin" method='post' action='signin.php'>
         <h2 class="form-signin-heading">Please sign in</h2>
         <input type="text" class="input-block-level" placeholder="Username">
         <input type="password" class="input-block-level" placeholder="Password">
         <!--<label class="checkbox">
           <input type="checkbox" value="remember-me"> Remember me
         </label>-->
+		<input type='hidden' name='cmd' value='login' />
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
       </form>
 	<?php
