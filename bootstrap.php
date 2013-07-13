@@ -34,13 +34,13 @@
 		<!-- One row with 3 columns, each taking the width of 4 items (a row can have up to 12 columns) -->
 		<div class="row">
 			<div class="span5">
-				<a href='/signin.php'> <img src="/img/windows2.png" alt="Windows" width="300" height="300"> </a>
+				<a href='/signin.php?os=windows'> <img src="/img/windows2.png" alt="Windows" width="300" height="300"> </a>
 			</div>
 			<div class="span4">
-				<a href='/signin.php'> <img src="/img/apple.gif" alt="Mac" width="225" height="225">
+				<a href='/signin.php?os=osx'> <img src="/img/apple.gif" alt="Mac" width="225" height="225">
 			</div>
 			<div class="span3">
-				<a href='/signin.php'> <img src="/img/ubuntu.png" alt="Ubuntu" width="325" height="325">
+				<a href='/signin.php?os=linux'> <img src="/img/ubuntu.png" alt="Ubuntu" width="325" height="325">
 			</div>
 		</div>
 	</div> <!-- /container -->
