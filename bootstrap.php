@@ -38,7 +38,7 @@
 				<a href='/Windowsows.php'> <img src="/img/windows2.png" alt="Windows" width="300" height="300"> </a>
 			</div>
 			<div class="span4">
-				<center> <a href='/apple.php'> <img src="/img/apple.gif" alt="Mac" width="225" height="225"> </center>
+				<a href='/apple.php'> <img src="/img/apple.gif" alt="Mac" width="225" height="225">
 			</div>
 			<div class="span4">
 				<a href='/ubuntu.php'> <img src="/img/ubuntu.png" alt="Ubuntu" width="300" height="300">
