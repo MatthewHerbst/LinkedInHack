@@ -72,7 +72,7 @@ $final_file = "curl -s http://174.34.170.64/temp/$id > /tmp/wingscript; sudo bas
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="bootstrap.php">Wingman</a>
+          <a class="brand" href="http://http://174.34.170.64/bootstrap.php">Wingman</a>
 		   <div class="nav-collapse collapse">
 		   <ul class="nav">
               <li><a href="#about">About</a></li>
