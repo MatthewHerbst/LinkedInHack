@@ -79,6 +79,18 @@ $final_file = "curl -s http://174.34.170.64/temp/$id > /tmp/wingscript; sudo bas
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Saved Projects <b class="caret"></b></a>
                 <ul class="dropdown-menu">
+					<?php
+				    $savedProjects = getSavedProjects($user);
+					
+					if(count($savedProject) > 0) {
+						foreach($savedProjects as $project) {
+							echo "<li><a href='#'>" . $project[1] . "</a></li>";
+						}
+					} else {
+						echo "<li><a href='#'>You have no saved projects</a></li>";
+					}
+				  ?>
+				  <!--
                   <li><a href="#">Action</a></li>
                   <li><a href="#">Another action</a></li>
                   <li><a href="#">Something else here</a></li>
@@ -86,6 +98,7 @@ $final_file = "curl -s http://174.34.170.64/temp/$id > /tmp/wingscript; sudo bas
                   <li class="nav-header">Nav header</li>
                   <li><a href="#">Separated link</a></li>
                   <li><a href="#">One more separated link</a></li>
+				  -->
                 </ul>
               </li>
             </ul>
