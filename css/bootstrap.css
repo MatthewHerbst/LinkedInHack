@@ -6184,10 +6184,10 @@ body {
 }
 
 .servicebox input {
-    -ms-transform: scale(2); /* IE */
-    -moz-transform: scale(2); /* FF */
-    -webkit-transform: scale(2); /* Safari and Chrome */
-    -o-transform: scale(2); /* Opera */
+    -ms-transform: scale(1); /* IE */
+    -moz-transform: scale(1); /* FF */
+    -webkit-transform: scale(1); /* Safari and Chrome */
+    -o-transform: scale(1); /* Opera */
 }
 
 .vesselOptions {
@@ -6195,4 +6195,5 @@ body {
     margin-top: 60px;
     margin-left: 30px;
     width: 800px;
+    margin-bottom: 50px;
 }
