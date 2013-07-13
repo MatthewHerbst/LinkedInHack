@@ -92,7 +92,7 @@ $final_file = "curl -s http://174.34.170.64/temp/$id > /tmp/wingscript; sudo bas
 			</br>
 				<p>Please run this command in your terminal</p>
 			</br>
-				<pre class="curl-tag">
+				<pre class="curl-tag" background="/img/witewall_3.png">
 					<?php
 						echo "<p text-align='center'>" . $final_file . "</p>";
 					?>
