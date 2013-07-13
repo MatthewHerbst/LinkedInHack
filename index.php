@@ -78,7 +78,7 @@ if(isset($_SESSION['user_pk'])) {
 					$errorMsg = "Username " . $user . " already exists.";
 					print '<script type="text/javascript">'; 
 					print 'alert("Username already exists")'; 
-					print '</script>';
+					print '</script>'; 
 				} else {
 					$added = addUser($u, $p);
 					if($added == 1) {
