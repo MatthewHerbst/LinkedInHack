@@ -2,6 +2,12 @@
 //Start session
 session_start();
 
+//Handle database connections
+include "db.php";
+
+//Connect to the database
+connectDB();
+
 //Check if the user is asking something
 if(isset($_REQUEST['cmd'])) {
 	//See if the user wants to logout
