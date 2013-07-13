@@ -184,7 +184,7 @@ function getPackageData($packageID) {
 	//Run the query on the database
 	$sql = "select packages from " . $SAVED_PACKAGES_TABLE . " where id='$packageID'";
 	$q = mysql_query($sql);
-	if(mysql_error() {
+	if(mysql_error()) {
 		return "Error retrieving package data from group " . $packageID;
 	}
 	
