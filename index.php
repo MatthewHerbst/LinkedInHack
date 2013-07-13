@@ -1,10 +1,6 @@
 <?php
 //Start session
-session_start();	
-/*if(isset($_REQUEST['cmd']) && isset($_REQUEST['table']) && $_REQUEST['cmd'] == "settable") {
-	$_SESSION['TABLE_PREFIX'] = $_REQUEST['table'];
-	unset($_SESSION['user_pk']);
-}*/
+session_start();
 
 //Handle database connections
 include "db.php";
@@ -35,11 +31,13 @@ if(isset($_SESSION['user_pk'])) {
 
 	//They have a session - see if they are asking anything
 	if($request == "add") {
+		/*
 		$comment = $_REQUEST['comment'];
 		$add = add($comment, $user_pk);
 		if($add != 1) {
 			$errorMsg = $add;
 		}
+		*/
 	}
 } else { //The user has not logged in
 	if(isset($_REQUEST['cmd'])) {
