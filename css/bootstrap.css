@@ -326,11 +326,12 @@ a:focus {
 
 .span4 {
   width: 300px;
-  margin-left: 10  px;
+  margin-left: 10px;
 }
 
 .span3 {
   width: 220px;
+  margin-left: 10px;
 }
 
 .span2 {
