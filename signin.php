@@ -157,6 +157,7 @@ if(isset($_SESSION['user_pk'])) {
     <div class="container">
       <form class="form-signin" method='post' action='signin.php'>
         <h2 class="form-signin-heading">Please sign in</h2>
+		<p id="errorMessage"></p>
         <input type="text" class="input-block-level" name="username" maxlength="30" id="username" placeholder="Username">
         <input type="password" class="input-block-level" name="password" maxlength="30" id="password" placeholder="Password">
         <!--<label class="checkbox">
