@@ -56,7 +56,7 @@ if(isset($_SESSION['user_pk'])) {
 					header("Location: http://174.34.170.64/selection.php");
 				} else {
 					//$errorMsg = "Invalid Username/Password";
-					echo "<script type='text/javascript'>document.getElementById('errorMessage').innerHTML = 'Invalid username/password'";
+					echo "<script type='text/javascript'>document.getElementById('errorMessage').innerHTML = 'Invalid username/password';</script>";
 				}
 			} //Check if the user wants to register
 		} else if($request == "register") {	
