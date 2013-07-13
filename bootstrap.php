@@ -146,6 +146,7 @@ if(isset($_REQUEST['cmd'])) {
 						else: ?>
 							<button type="submit" class="btn">Logout</button>
 							<input type='hidden' name='cmd' value='logout' />
+						<?php endif; ?>
 					</form>
 				</div>
 			</div>
