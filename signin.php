@@ -164,17 +164,16 @@ if(isset($_SESSION['user_pk'])) {
         </label>
 		<input type='hidden' name='cmd' value='login' />-->
 		<script type="text/javascript">
-		function loginOrRegister(type) {
-			if(type == "login") {
-				return "<input type='hidden' name='cmd' value='login' />";
-			} else {
-				return "<input type='hidden' name='cmd' value='register' />";
-			}
+		function clicklogin() {
+			document.getElementById("loginRegister").innerHTML = "<input type='hidden' name='cmd' value='login' />";
+		};
+		function clickregister() {
+			document.getElementById("loginRegister").innerHTML = "<input type='hidden' name='cmd' value='register' />";
 		};
 		</script>
-        <button class="btn btn-large btn-primary" type="submit" onclick="loginOrRegister("login")>Sign in</button>
-		<button class="btn btn-large btn-primary" type="submit" onclick="loginOrRegister("register")>Register</button>
-		
+        <button class="btn btn-large btn-primary" type="submit" onclick="clicklogin()")>Sign in</button>
+		<button class="btn btn-large btn-primary" type="submit" onclick="clickregister")>Register</button>
+		<div id="loginRegister"></div>
       </form>
     </div> <!-- /container -->
 
