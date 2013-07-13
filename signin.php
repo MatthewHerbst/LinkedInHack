@@ -14,9 +14,12 @@ $user_pk = "";
 $errorMsg = "";
 $message = "";
 $request = "";
+$goingTo = "";
 
-//Check if a command is coming from browser
-
+//Get where this person wants to go
+if(isset($_REQUEST['os'])) {
+	$goingTo = $_REQUEST['os'];
+}
 
 //See if this person has an open session
 if(isset($_SESSION['user_pk'])) {
@@ -31,7 +34,7 @@ if(isset($_REQUEST['cmd'])) {
 	//Check if they are asking to logout
 	if($request == "logout") {
 		unset($_SESSION['user_pk']);
-	} else if($request == "Login") {
+	} else if($request == "login") {
 		$u = $_REQUEST['username'];
 		$p = $_REQUEST['password'];
 		
@@ -42,7 +45,8 @@ if(isset($_REQUEST['cmd'])) {
 			$errorMsg = "Please enter a password";
 		} else {
 			$pk = validateUser($u, $p);
-			if($pk > 0) {
+			if($pk != -1) {
+				//Initialize session variables
 				$_SESSION['user'] = $u;
 				$_SESSION['user_pk'] = $pk;
 				$user = $u;
@@ -50,10 +54,10 @@ if(isset($_REQUEST['cmd'])) {
 				$message = "Welcome " . $user;
 			}
 			else {
-				$errorMsg = "Invalid User/Password";
+				$errorMsg = "Invalid Username/Password";
 			}
 		}
-	} else if($request == "Register") {
+	} else if($request == "register") {
 		$u = $_REQUEST['new_username'];
 		$p = $_REQUEST['new_password'];
 		
@@ -70,11 +74,17 @@ if(isset($_REQUEST['cmd'])) {
 				$added = addUser($u, $p); //Returns 1 if succesful or an error message otherwise
 				if($added == 1) {
 					$pk = validateUser($u, $p);
-					$_SESSION['user_pk'] = $pk;
-					$_SESSION['user'] = $u;
-					$user = $u;
-					$user_pk = $pk;
-					$message = "Welcome. Thanks for registering" . $user . "!";
+					
+					//Check if the validation returned valid
+					if($pk != -1) {
+						$_SESSION['user_pk'] = $pk;
+						$_SESSION['user'] = $u;
+						$user = $u;
+						$user_pk = $pk;
+						$message = "Welcome. Thanks for registering" . $user . "!";
+					} else {
+						$errorMsg = "Usernames and passwords must be alphanumeric";
+					}
 				} else {
 					$errorMsg = $added;
 				}
@@ -135,7 +145,9 @@ if(isset($_REQUEST['cmd'])) {
   </head>
 
   <body>
-
+	<?php //Give the user the option to login if they aren't
+		if($user_pk == ""):
+	?>
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -148,20 +160,26 @@ if(isset($_REQUEST['cmd'])) {
         </div>
       </div>
     </div>
-  
-
     <div class="container">
-
-      <form class="form-signin">
+      <form class="form-signin" method='post' action='signin.php'>
         <h2 class="form-signin-heading">Please sign in</h2>
         <input type="text" class="input-block-level" placeholder="Username">
         <input type="password" class="input-block-level" placeholder="Password">
         <!--<label class="checkbox">
           <input type="checkbox" value="remember-me"> Remember me
         </label>-->
+		<input type='hidden' name='cmd' value='login' />
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
       </form>
-
+	<?php
+		else:
+	?>
+	<?php header("Location: " + $goingTo . ".php"); ?>
+	<!--<script type="text/javascript">
+		//Send the user to the page they wanted
+		window.location = "http://www.htmlcodes.me/"
+	</script>-->
+	<?php endif; ?>
     </div> <!-- /container -->
 
     <!-- Le javascript

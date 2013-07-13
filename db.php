@@ -9,8 +9,6 @@ $USERNAME_MAX_SIZE = 30;
 $USERNAME_MIN_SIZE = 3;
 $PASSWORD_MAX_SIZE = 30;
 $PASSWORD_MIN_SIZE = 3;
-$COMMENT_MAX_SIZE = 16777215;
-$COMMENT_MIN_SIZE = 1;
 /************** END CONFIGURATION *************/
 
 /*
@@ -20,40 +18,40 @@ function connectDB() {
 	global $USER;
 	global $PASSWORD;
 	global $DB;
-	mysql_connect("localhost",$USER,$PASSWORD) || die("can not connect");
+	mysql_connect("localhost", $USER, $PASSWORD) || die("can not connect");
 	mysql_select_db($DB);
 }
 
 /*
 Validate a user - check the password - returns the primary key if successful
-or 0 if failed.
+or -1 if failed.
 */
 function validateUser($user, $password) {
 	global $USER_TABLE;
 	
 	//Username can only be alphanumeric
 	if(!ctype_alnum($user)) {
-		return 0;
+		return -1;
 	}
 	
 	//Password can only be alphanumeric
 	if(!ctype_alnum($password)) {
-		return 0;
+		return -1;
 	}
 	
 	//Run the query on the database
 	$query = "select pk, password from ". $USER_TABLE . " where username = '" . mysql_real_escape_string($user) . "'";
 	$q = mysql_query($query);
 	if(!$q) {
-		return 0;
+		return -1;
 	}
 	$r = mysql_fetch_array($q);
 	if($r && $r['password'] != crypt($password, $user)) {
-	    return 0;
+	    return -1;
 	} else if ($r && $r['pk'] > 0) {
 		return $r['pk'];
 	} else {
-		return 0;
+		return -1;
 	}
 }
 
