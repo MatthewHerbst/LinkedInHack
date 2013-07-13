@@ -143,7 +143,7 @@ if(isset($_REQUEST['cmd'])) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">Wingman</a>
+          <a class="brand" href="bootstrap.php">Wingman</a>
         </div>
       </div>
     </div>
