@@ -1,0 +1,3 @@
+package {'vlc':
+	ensure	=>	present
+	}
