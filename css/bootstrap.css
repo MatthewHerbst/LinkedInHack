@@ -6118,7 +6118,7 @@ a.badge:focus {
 }
 
 .hero-unit {
-  padding: 60px;
+  padding: 50px;
   margin-bottom: 30px;
   font-size: 18px;
   font-weight: 200;
@@ -6164,4 +6164,8 @@ a.badge:focus {
 
 .affix {
   position: fixed;
+}
+
+body {
+    background-color: #eeeeee;
 }

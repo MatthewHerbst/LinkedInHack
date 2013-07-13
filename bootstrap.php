@@ -106,7 +106,7 @@ if(isset($_REQUEST['cmd'])) {
 	<link href="/css/bootstrap-responsive.css" rel="stylesheet">
 </head>
 
-<body bgcolor="#eeeeee">
+<body bgcolor="#EEEEEE">
     <div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
@@ -115,8 +115,8 @@ if(isset($_REQUEST['cmd'])) {
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="brand" href="#">Project name</a>
-				<div class="nav-collapse collapse">
+				<a class="brand" href="#">Wingman</a>
+				<!-- <div class="nav-collapse collapse">
 					<ul class="nav">
 						<li class="active"><a href="#">Home</a></li>
 						<li><a href="#about">About</a></li>
@@ -147,7 +147,7 @@ if(isset($_REQUEST['cmd'])) {
 							<input type='hidden' name='cmd' value='logout' />
 						<?php endif; ?>
 					</form>
-				</div>
+				</div> -->
 			</div>
 		</div>
     </div>
@@ -167,7 +167,7 @@ if(isset($_REQUEST['cmd'])) {
 		<!-- One row with 3 columns, each taking the width of 4 items (a row can have up to 12 columns) -->
 		<div class="row">
 			<div class="span4">
-				<a href='/windows.php'> <img src="/img/windows.jpg" alt="Windows" width="300" height="300"> </a>
+				<a href='/Windowsows.php'> <img src="/img/windows.jpg" alt="Windows" width="300" height="300"> </a>
 			</div>
 			<div class="span4">
 				<a href='/apple.php'> <img src="/img/apple.gif" alt="Mac" width="225" height="225">
