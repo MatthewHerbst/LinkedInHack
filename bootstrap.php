@@ -167,7 +167,7 @@ if(isset($_REQUEST['cmd'])) {
 		<!-- One row with 3 columns, each taking the width of 4 items (a row can have up to 12 columns) -->
 		<div class="row">
 			<div class="span4">
-				<a href='/winows.php'> <img src="/img/windows.jpg" alt="Windows" width="300" height="300"> </a>
+				<a href='/windows.php'> <img src="/img/windows.jpg" alt="Windows" width="300" height="300"> </a>
 			</div>
 			<div class="span4">
 				<a href='/apple.php'> <img src="/img/apple.gif" alt="Mac" width="225" height="225">
