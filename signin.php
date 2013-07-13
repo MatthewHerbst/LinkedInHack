@@ -50,6 +50,8 @@ if(isset($_SESSION['user_pk'])) {
 					$user = $u;
 					$user_pk = $pk;
 					$message = "Welcome " . $user;
+					
+					header("Location: http://174.34.170.64/selection.php");
 				}
 				else {
 					$errorMsg = "Invalid Username/Password";
@@ -144,9 +146,6 @@ if(isset($_SESSION['user_pk'])) {
   </head>
 
   <body>
-	<?php //Give the user the option to login if they aren't
-		if($user_pk == ""):
-	?>
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -170,11 +169,6 @@ if(isset($_SESSION['user_pk'])) {
 		<input type='hidden' name='cmd' value='login' />
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
       </form>
-	<?php
-		else:
-	?>
-	<?php header("Location: http://174.34.170.64/selection.php"); ?>
-	<?php endif; ?>
     </div> <!-- /container -->
 
     <!-- Le javascript
