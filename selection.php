@@ -40,7 +40,7 @@ if(isset($_SESSION['user_pk'])) {
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Sign in &middot; Wingman</title>
+    <title>Your Wingman</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
