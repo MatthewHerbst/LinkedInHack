@@ -145,12 +145,9 @@ if(isset($_REQUEST['cmd'])) {
   </head>
 
   <body>
-<<<<<<< HEAD
 	<?php //Give the user the option to login if they aren't
 		if($user_pk == ""):
 	?>
-=======
-
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -163,11 +160,7 @@ if(isset($_REQUEST['cmd'])) {
         </div>
       </div>
     </div>
-  
-
->>>>>>> 506a8ce6e5516b641d73a16e6cf28fa747198d9e
     <div class="container">
-
       <form class="form-signin" method='post' action='signin.php'>
         <h2 class="form-signin-heading">Please sign in</h2>
         <input type="text" class="input-block-level" placeholder="Username">
