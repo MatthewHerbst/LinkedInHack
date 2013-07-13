@@ -145,7 +145,7 @@ function getPackages() {
 Creates a saved group of packages to be associated with a specific user.
 Returns 1 if succes, or the error message otherwise.
 */
-function createGroup($user, $groupName, $packages) {
+function createProject($user, $groupName, $packages) {
 	global $SAVED_PACKAGES_TABLE;
 	global $GROUPNAME_MAX_SIZE;
 	global $GROUPNAME_MIN_SIZE;
