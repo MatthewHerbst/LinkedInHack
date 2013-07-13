@@ -1,8 +1,9 @@
 <?php
 
 
-$data = $_GET['packages'];
-$id   = $_GET['id'];
+$data = $_POST['packages'];
+$id   = $_POST['id'];
+
 
 $manifest = '';
 

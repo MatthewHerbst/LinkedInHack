@@ -103,69 +103,71 @@ if(!isset($_SESSION['user_pk'])) {
 <div class="container" bgcolor="#FFFFFFF">
 <center>
 <div class="vessel">
-  <form accept-charset="UTF-8" action="/profiles" class="form-horizontal" id="vessels_form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Wfmr4E6zD+a2qbdV3bdlAUxSKPdDsYoj/exCbQX+KGg=" /></div>
-  <h1>Setup Project: <span>Project 1</span><input html="{:value=&gt;&quot;Project 1&quot;, :placeholder=&gt;&quot;Project 1&quot;}" id="profile_title" name="profile[title]" size="30" type="text" />
-    <input type="text" placeholder="Orihect 1" value="Project 1"></h1>
+  <form accept-charset="UTF-8" action="process.php" class="form-horizontal" id="vessels_form" method="post">
+<div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Wfmr4E6zD+a2qbdV3bdlAUxSKPdDsYoj/exCbQX+KGg=" /></div>
+  <h2>Setup Project:
+    <input type="text"  value="ProjectX"></h2>
+	<input type='hidden' name='id' value='<?php echo uniqid(); ?>'>
       <table border=0 class="vesselOptions goods">
         <tr>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="vlc" /></span>
+              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="vlc" /></span>
               VLC
             </td>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="ruby" /></span>
+              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="ruby" /></span>
               Ruby
             </td>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="php5" /></span>
+              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="php5" /></span>
               PHP
             </td>
           </tr>
           <tr>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="vim" /></span>
-              vim
+              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="vim" /></span>
+              Vim
             </td>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="chromium-browser" /></span>
+              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="chromium-browser" /></span>
               Chrome
             </td>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="git" /></span>
+              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="git" /></span>
               Git
             </td>
 
           </tr>
           <tr>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="valac" /></span>
+              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="valac" /></span>
               Valac
             </td>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="wunderlist" /></span>
+              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="wunderlist" /></span>
               Wunderlist
             </td>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="googleearth" /></span>
-              Googleearth
+              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="googleearth" /></span>
+              Google Earth
             </td>
           </tr>
           <tr>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="crashplan" /></span>
+              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="crashplan" /></span>
               Crashplan
             </td>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="g++" /></span>
+              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="g++" /></span>
               G++
             </td>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="python" /></span>
+              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="python" /></span>
               Python
             </td>
       </table>
       <div id="buildVessel" class="proceed">
-        <button class="btn btn-large btn-success" type="button">Build Project</button>
+        <input type='submit' class="btn btn-large btn-success" value="Build Project">
       </div>
 </form></div>
 

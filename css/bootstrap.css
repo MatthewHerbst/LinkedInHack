@@ -12,6 +12,13 @@
   *zoom: 1;
 }
 
+
+.vessel {
+  background: #fff;
+  padding: 25px;
+  margin-top:50px;
+}
+
 .clearfix:before,
 .clearfix:after {
   display: table;
