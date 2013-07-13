@@ -16,82 +16,73 @@ $message = "";
 $request = "";
 
 //Check if a command is coming from browser
-if(isset($_REQUEST['cmd'])) {
-	$request=$_REQUEST['cmd'];
-}
 
-//Logout the user if needed
-if($request == "logout") {
-	unset($_SESSION['user_pk']);
-}
 
-//See if this person has been here before
+//See if this person has an open session
 if(isset($_SESSION['user_pk'])) {
 	$user = $_SESSION['user'];
 	$user_pk = $_SESSION['user_pk'];
+}
 
-	//They have a session - see if they are asking anything
-	if($request == "add") {
-		/*
-		$comment = $_REQUEST['comment'];
-		$add = add($comment, $user_pk);
-		if($add != 1) {
-			$errorMsg = $add;
+//See if the user is requesting anything
+if(isset($_REQUEST['cmd'])) {
+	$request = $_REQUEST['cmd'];
+	
+	//Check if they are asking to logout
+	if($request == "logout") {
+		unset($_SESSION['user_pk']);
+	} else if($request == "login") {
+		$u = $_REQUEST['username'];
+		$p = $_REQUEST['password'];
+		
+		//Ensure both a username and a password were entered
+		if(empty($u)) {
+			$errorMsg = "Please enter a username";
+		} else if(empty($p)) {
+			$errorMsg = "Please enter a password";
+		} else {
+			$pk = validateUser($u, $p);
+			if($pk > 0) {
+				$_SESSION['user'] = $u;
+				$_SESSION['user_pk'] = $pk;
+				$user = $u;
+				$user_pk = $pk;
+				$message = "Welcome " . $user;
+			}
+			else {
+				$errorMsg = "Invalid User/Password";
+			}
 		}
-		*/
-	} else { //The user has not logged in
-		if(isset($_REQUEST['cmd'])) {
-			//See if they are asking to login
-			if($_REQUEST['cmd'] == 'login') {
-				$u = $_REQUEST['username'];
-				$p = $_REQUEST['password'];
-				
-				//Ensure both a username and a password were entered
-				if(empty($u)) {
-					$errorMsg = "Please enter a username";
-				} else if(empty($p)) {
-					$errorMsg = "Please enter a password";
-				} else {
+	} else if($request == "register") {
+		$u = $_REQUEST['new_username'];
+		$p = $_REQUEST['new_password'];
+		
+		//Ensure both a username and a password were entered
+		if(empty($u)) {
+			$errorMsg = "Please enter a username";
+		} else if(empty($p)) {
+			$errorMsg = "Please enter a password";
+		} else {
+			//See if that username is already taken
+			if(checkUserExist($u)) {
+				$errorMsg = "Username " . $user . " already exists.";
+			} else {
+				$added = addUser($u, $p); //Returns 1 if succesful or an error message otherwise
+				if($added == 1) {
 					$pk = validateUser($u, $p);
-					if ($pk > 0) {
-						$_SESSION['user'] = $u;
-						$_SESSION['user_pk'] = $pk;
-						$user = $u;
-						$user_pk = $pk;
-						$message = "Welcome " . $user;
-					}
-					else {
-						$errorMsg = "Invalid User/Password";
-					}
-				}
-			} elseif($_REQUEST['cmd'] == 'register') { //See if they are asking to register
-				$u = $_REQUEST['new_username'];
-				$p = $_REQUEST['new_password'];
-				
-				//Ensure both a username and a password were entered
-				if(empty($u)) {
-					$errorMsg = "Please enter a username";
-				} else if(empty($p)) {
-					$errorMsg = "Please enter a password";
+					$_SESSION['user_pk'] = $pk;
+					$_SESSION['user'] = $u;
+					$user = $u;
+					$user_pk = $pk;
+					$message = "Welcome. Thanks for registering" . $user . "!";
 				} else {
-					if(checkUserExist($u)) {
-						$errorMsg = "Username " . $user . " already exists.";
-					} else {
-						$added = addUser($u, $p);
-						if($added == 1) {
-							$pk = validateUser($u, $p);
-							$_SESSION['user_pk'] = $pk;
-							$_SESSION['user'] = $u;
-							$user = $u;
-							$user_pk = $pk;
-							$message = "Welcome. Thanks for registering" . $user . "!";
-						} else {
-							$errorMsg = $added;
-						}
-					}
+					$errorMsg = $added;
 				}
-			}		
+			}
+		}
 	}
+} else {
+	//Do nothing
 }
 ?>
 
