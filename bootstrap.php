@@ -34,7 +34,7 @@
 
 		<!-- One row with 3 columns, each taking the width of 4 items (a row can have up to 12 columns) -->
 		<div class="row">
-			<div class="span4">
+			<div class="span6">
 				<a href='/Windowsows.php'> <img src="/img/windows2.png" alt="Windows" width="300" height="300"> </a>
 			</div>
 			<div class="span4">
