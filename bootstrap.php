@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Our cool app!</title>
+	<title>Wingman - Gets you set up.</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
+	<meta name="description" content="Gets you set up.">
 	<meta name="author" content="">
 
 	<!-- Le styles -->
