@@ -5,10 +5,14 @@ $PASSWORD = 'hackathon2013';
 $DB='hackathon';
 
 $USER_TABLE = 'users';
+$SAVED_PACKAGES_TABLE = 'saved_package_groups';
+$PACKAGE_TABLE = 'packages';
 $USERNAME_MAX_SIZE = 30;
 $USERNAME_MIN_SIZE = 3;
 $PASSWORD_MAX_SIZE = 30;
 $PASSWORD_MIN_SIZE = 3;
+$GROUPNAME_MAX_SIZE = 30;
+$GROUPNAME_MIN_SIZE = 1;
 /************** END CONFIGURATION *************/
 
 /*
@@ -114,4 +118,80 @@ function addUser($user, $password) {
 	} else {
 		return 1;
 	}
+}
+
+/*
+Creates a saved group of packages to be associated with a specific user.
+Returns 1 if succes, or the error message otherwise.
+*/
+function createGroup($user, $groupName, $packages) {
+	global $SAVED_PACKAGES_TABLE;
+	global $GROUPNAME_MAX_SIZE;
+	global $GROUPNAME_MIN_SIZE;
+	
+	//Check group name rules
+	if(!ctype_alun($groupName) || strlen($groupName) > $GROUPNAME_MAX_SIZE || strlen($groupName) < $GROUPNAME_MIN_SIZE) {
+		return "Project names must be at least 1 character, and no more than 30.";
+	}
+	
+	//Make groupname safe for db
+	$fixedGroupName = mysql_real_escape_string($groupName);
+	
+	//Serialize the array for storage in the database
+	$serializedPackages = serialize($packages);
+	
+	//Run the query on the database
+	$sql = "insert into " . $SAVED_PACKAGES_TABLE . " (username, groupname, packages) values('$user', '$fixedGroupName', '$serializedPackages')";
+	mysql_query($sql);
+	if(mysql_error()) {
+		return "Error adding group to the database. Please contact site administrator";
+	}
+	
+	return 1;
+}
+
+/*
+Gets a list of package groups associated with a user
+Returns an array of the data, or an error message if any
+*/
+function getPackageGroups($user) {
+	global $SAVED_PACKAGES_TABLE;
+	
+	global $SAVED_PACKAGES_TABLE;
+	
+	//Run the queries on the database
+	$sql = "select id, groupname from " . $SAVED_PACKAGES_TABLE . " where username='$user'";
+	$names = mysql_query($sql);
+	if(mysql_error()) {
+		return "Error retrieving packages data for " . $user;
+	}
+	
+	//Make the data useful
+	$results = array();
+	while($r = mysql_fetch_array($q)) {
+		$temp = array($r[0], $r[1]);
+		array_push($result, $temp);
+	}
+	return $result;
+}
+
+/*
+Returns data from a package group saved by a user
+*/
+function getPackageData($packageID) {
+	global $SAVED_PACKAGES_TABLE;
+	
+	//Run the query on the database
+	$sql = "select packages from " . $SAVED_PACKAGES_TABLE . " where id='$packageID'":
+	$q = mysql_query($sql);
+	if(mysql_error() {
+		return "Error retrieving package data from group " . $packageID;
+	}
+	
+	//TODO: should do a check on $q being null
+	
+	//Deserialize the data
+	$deserializedPackages = unserialize($q);
+	
+	return $deserializedPackages;
 }
