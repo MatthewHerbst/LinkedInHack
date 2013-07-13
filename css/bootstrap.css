@@ -6171,6 +6171,10 @@ a.badge:focus {
   position: fixed;
 }
 
+.form-signin {
+  margin-top: 50px;
+}
+
 body {
     background-image: url('/img/grey_wash_wall.png');
 }
