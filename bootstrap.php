@@ -106,7 +106,7 @@ if(isset($_REQUEST['cmd'])) {
 	<link href="/css/bootstrap-responsive.css" rel="stylesheet">
 </head>
 
-<body class="hero_unit">
+<body>
 	<!--
     <div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
@@ -149,7 +149,7 @@ if(isset($_REQUEST['cmd'])) {
     <div class="container">
 
 		<!-- Main hero unit for a primary marketing message or call to action -->
-		<div>
+		<div class="hero-unit">
 			<center> 
 				<h1>Easy Install</h1>
 			</br>
