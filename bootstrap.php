@@ -31,7 +31,7 @@ if(isset($_REQUEST['cmd'])) {
 	//Check if they are asking to logout
 	if($request == "logout") {
 		unset($_SESSION['user_pk']);
-	} else if($request == "login") {
+	} else if($request == "Login") {
 		$u = $_REQUEST['username'];
 		$p = $_REQUEST['password'];
 		
@@ -53,7 +53,7 @@ if(isset($_REQUEST['cmd'])) {
 				$errorMsg = "Invalid User/Password";
 			}
 		}
-	} else if($request == "register") {
+	} else if($request == "Register") {
 		$u = $_REQUEST['new_username'];
 		$p = $_REQUEST['new_password'];
 		
@@ -139,8 +139,8 @@ if(isset($_REQUEST['cmd'])) {
 						if($user_pk == ""): ?> 
 							<input class="span2" type="text" name='username' maxlength="30" id='username' placeholder="Username">
 							<input class="span2" type="password" name='password' maxlength="30" id='password' placeholder="Password">
-							<input type="submit" class="btn" name='cmd' value='login' placeholder="Login">
-							<input type="submit" class="btn" name='cmd' value='register' palceholder="Register">
+							<input type="submit" class="btn" name='cmd' value='Login'>
+							<input type="submit" class="btn" name='cmd' value='Register'>
 						<?php //Show logout option
 						else: ?>
 							<button type="submit" class="btn">Logout</button>
