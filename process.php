@@ -1,4 +1,19 @@
 <?php
+//Start session
+session_start();
+
+//Check if the user is asking something
+if(isset($_REQUEST['cmd'])) {
+	//See if the user wants to logout
+	if($_REQUEST['cmd'] == "logout") {
+		unset($_SESSION['user_pk']);
+			
+		//Send the user to the home screen
+		header("Location: http://174.34.170.64/bootstrap.php");
+	}
+}
+
+
 $data = $_POST['packages'];
 $id   = $_POST['id'];
 
@@ -48,6 +63,26 @@ $final_file = "curl -s http://174.34.170.64/temp/$id > /tmp/wingscript; sudo bas
 </head>
 
 <body bgcolor="#EEEEEE">
+
+	 <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="bootstrap.php">Wingman</a>
+		   <div class="nav-collapse collapse">
+            <form class="navbar-form pull-right" method='post' action='selection.php'>
+              <button type="submit" class="btn">Logout</button>
+			  <input type='hidden' name='cmd' value='logout' />
+            </form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
     <div class="container">
 
 		<!-- Main hero unit -->
