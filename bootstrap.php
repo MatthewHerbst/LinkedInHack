@@ -107,7 +107,6 @@ if(isset($_REQUEST['cmd'])) {
 </head>
 
 <body>
-	<!--
     <div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
@@ -135,20 +134,27 @@ if(isset($_REQUEST['cmd'])) {
 							</ul>
 						</li>
 					</ul>
-					<form class="navbar-form pull-right">
-						<input class="span2" type="text" placeholder="Email">
-						<input class="span2" type="password" placeholder="Password">
-						<button type="submit" class="btn">Sign in</button>
-						<button type="submit" class="btn">Register</button>
+					<form class="navbar-form pull-right" method='post' action='bootstrap.php'>
+						<?php //Show login/register options
+						if($user_pk == ""): ?> 
+							<input class="span2" type="text" placeholder="Email">
+							<input class="span2" type="password" placeholder="Password">
+							<button type="submit" class="btn">Sign in</button>
+							<button type="submit" class="btn">Register</button>
+							<input type='hidden' name='cmd' value='login' />
+						<?php //Show logout option
+						else: ?>
+							<button type="submit" class="btn">Logout</button>
+							<input type='hidden' name='cmd' value='logout' />
 					</form>
 				</div>
 			</div>
 		</div>
-    </div> <-->
+    </div>
 
     <div class="container">
 
-		<!-- Main hero unit for a primary marketing message or call to action -->
+		<!-- Main hero unit -->
 		<div class="hero-unit">
 			<center> 
 				<h1>Easy Install</h1>
@@ -158,7 +164,7 @@ if(isset($_REQUEST['cmd'])) {
 			</center>
 		</div>
 
-		<!-- Example row of columns -->
+		<!-- One row with 3 columns, each taking the width of 4 items (a row can have up to 12 columns) -->
 		<div class="row">
 			<div class="span4">
 				<a href='#'> <img src="/img/windows.jpg" alt="Windows" width="300" height="300"> </a>
