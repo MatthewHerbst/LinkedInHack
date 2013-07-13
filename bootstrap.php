@@ -107,7 +107,6 @@ if(isset($_REQUEST['cmd'])) {
 </head>
 
 <body>
-	<!--
     <div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
@@ -151,7 +150,7 @@ if(isset($_REQUEST['cmd'])) {
 				</div>
 			</div>
 		</div>
-    </div> <-->
+    </div>
 
     <div class="container">
 
