@@ -116,6 +116,7 @@ if(isset($_REQUEST['cmd'])) {
         -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
                 box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        margin-top: 100px;
       }
       .form-signin .form-signin-heading,
       .form-signin .checkbox {
