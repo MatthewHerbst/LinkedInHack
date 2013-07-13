@@ -12,12 +12,10 @@ connectDB();
 $user = "";
 $user_pk = "";
 $errorMsg = "";
-$message = "";
 $request = "";
 
 //See if this person has an open session
-/*
-if(!isset($_SESSION['user_pk'])) {
+if(isset($_SESSION['user_pk'])) {
 	$user = $_SESSION['user'];
 	$user_pk = $_SESSION['user_pk'];
 	
@@ -25,15 +23,17 @@ if(!isset($_SESSION['user_pk'])) {
 	if(isset($_REQUEST['cmd'])) {
 		$request = $_REQUEST['cmd'];
 		
+		//See if the user is requesting to logout
 		if($request == "logout") {
 			unset($_SESSION['user_pk']);
-			header("Location: http://174.34.170.64/signin.php");
+			
+			//Send the user to the home screen
+			header("Location: http://174.34.170.64/bootstrap.php");
 		}
 	}
 } else { //If they don't, send them to the sign in page
 	header("Location: http://174.34.170.64/signin.php");
 }
-*/
 ?>
 
 <!DOCTYPE html>
@@ -95,6 +95,12 @@ if(!isset($_SESSION['user_pk'])) {
             <span class="icon-bar"></span>
           </button>
           <a class="brand" href="bootstrap.php">Wingman</a>
+		   <div class="nav-collapse collapse">
+            <form class="navbar-form pull-right" method='post' action='selection.php'>
+              <button type="submit" class="btn">Logout</button>
+			  <input type='hidden' name='cmd' value='logout' />
+            </form>
+          </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
