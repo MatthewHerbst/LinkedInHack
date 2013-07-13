@@ -188,6 +188,7 @@ if(isset($_SESSION['user_pk'])) {
       </table>
       <div id="buildVessel" class="proceed">
         <input type='submit' class="btn btn-large btn-success" value="Build Project">
+		<input type='submit' class="btn btn-large btn-success" value="Save Project">
       </div>
 </form></div>
 
