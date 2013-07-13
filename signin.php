@@ -21,6 +21,7 @@ if(isset($_REQUEST['os'])) {
 	$goingTo = $_REQUEST['os'];
 }
 
+/*
 //See if this person has an open session
 if(isset($_SESSION['user_pk'])) {
 	header("Location: http://174.34.170.64/selection.php");
@@ -94,7 +95,7 @@ if(isset($_SESSION['user_pk'])) {
 	} else {
 		//Do nothing
 	}
-}
+}*/
 ?>
 
 <!DOCTYPE html>

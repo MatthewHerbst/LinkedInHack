@@ -16,6 +16,7 @@ $message = "";
 $request = "";
 
 //See if this person has an open session
+/*
 if(!isset($_SESSION['user_pk'])) {
 	$user = $_SESSION['user'];
 	$user_pk = $_SESSION['user_pk'];
@@ -32,6 +33,7 @@ if(!isset($_SESSION['user_pk'])) {
 } else { //If they don't, send them to the sign in page
 	header("Location: http://174.34.170.64/signin.php");
 }
+*/
 ?>
 
 <!DOCTYPE html>
