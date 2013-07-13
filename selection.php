@@ -150,18 +150,18 @@ if(isset($_SESSION['user_pk'])) {
               Valac
             </td>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="wunderlist" /></span>
-              Wunderlist
+              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="nodejs" /></span>
+              Node.js
             </td>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="googleearth" /></span>
-              Google Earth
+              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="sublime" /></span>
+              Sublime Text
             </td>
           </tr>
           <tr>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="crashplan" /></span>
-              Crashplan
+              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="mongodb" /></span>
+              Mongodb
             </td>
             <td>
               <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="g++" /></span>
