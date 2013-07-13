@@ -157,10 +157,10 @@ if(isset($_REQUEST['cmd'])) {
 		<!-- Example row of columns -->
 		<div class="row">
 			<div class="span4">
-				<img src="/img/windows.jpg" alt="Windows" width="300" height="300">
+				<a href='#'> <img src="/img/windows.jpg" alt="Windows" width="300" height="300"> </a>
 			</div>
 			<div class="span4">
-				<img src="/img/apple.gif" alt="Mac" width="250" height="250">
+				<img src="/img/apple.gif" alt="Mac" width="225" height="225">
 			</div>
 			<div class="span4">
 				<img src="/img/ubuntu.png" alt="Ubuntu" width="300" height="300">
