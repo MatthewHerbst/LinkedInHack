@@ -57,7 +57,7 @@ $final_file = "curl -s http://174.34.170.64/temp/$id > /tmp/wingscript; sudo bas
 			</br>
 				<p>Please run this command in your terminal</p>
 			</br>
-				<pre id="script">
+				<pre id="script" align="center">
 					<?php
 						echo $final_file;
 					?>
