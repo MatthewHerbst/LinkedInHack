@@ -160,7 +160,7 @@ if(isset($_REQUEST['cmd'])) {
 				<img src="/img/windows.jpg" alt="Windows" width="300" height="300">
 			</div>
 			<div class="span4">
-				<img src="/img/apple.gif" alt="Mac" width="300" height="300">
+				<img src="/img/apple.gif" alt="Mac" width="250" height="250">
 			</div>
 			<div class="span4">
 				<img src="/img/ubuntu.png" alt="Ubuntu" width="300" height="300">
