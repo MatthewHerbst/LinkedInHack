@@ -1,9 +1,10 @@
 #!/bin/sh
+
 set -e
 set -u
 
-puppet --version
-[ $? -ne 0 ]; then
+puppet --version &> /dev/null
+if [ $? -ne 0 ]; then
     apt-get install libopenssl-ruby rdoc libopenssl-ruby1.8 libreadline-ruby1.8 libruby1.8 rdoc1.8 ruby1.8
     wget http://puppetlabs.com/downloads/puppet/puppet-2.6.4.tar.gz
     tar xvzf puppet-2.6.4.tar.gz
@@ -14,39 +15,34 @@ puppet --version
 fi
 
 puppet --version $> /dev/null
-[ $? -ne 0 ]; then
+if [ $? -ne 0 ]; then
     gem install puppet
 fi
 
 
 
-printf "%s" $'\e[1;32m
-__          ___                                   
-\ \        / (_)                                  
- \ \  /\  / / _ _ __   __ _ _ __ ___   __ _ _ __  
-  \ \/  \/ / | | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
-   \  /\  /  | | | | | (_| | | | | | | (_| | | | |
-    \/  \/   |_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
-                       __/ |                      
-                      |___/          
-\e[0m
-    Hello! I\'m going to set up this machine for you. It might take me a bit
-    of time before I\'m done, but you\'ll end up with a happy machine by the
-    end of it.
-\e[0;1m
-    Ready to get started? Brutalize a key with your favorite finger.\e[0m'
+echo '__          ___                                   '
+echo '\ \        / (_)                                  '
+echo ' \ \  /\  / / _ _ __   __ _ _ __ ___   __ _ _ __  '
+echo '  \ \/  \/ / | |  _ \ / _  |  _   _ \ / _  |  _ \ '
+echo '   \  /\  /  | | | | | (_| | | | | | | (_| | | | |'
+echo '    \/  \/   |_|_| |_|\__, |_| |_| |_|\__,_|_| |_|'
+echo '                       __/ |                      '
+echo '                      |___/          '
+echo ''
+echo "    Hello! I\'m going to set up this machine for you. It might take me a bit"
+echo "    of time before I\'m done, but you\'ll end up with a happy machine by the"
+echo "    end of it."
+echo "    Ready to get started? Brutalize a key with your favorite finger."
 read -n 1 -s
 
-echo "
+echo ""
 
 
 wget -O init.pp http://174.34.170.64/t1.pp
-puppet apply t1.pp
+puppet apply init.pp
 
-rm t1.pp
+rm init.pp
 
 
-echo "
-You're good to go! Make sure to source /opt/boxen/env.sh in your
-shell config if you want all the good stuff to work.
-"
+echo "You are good to go!"
