@@ -158,9 +158,9 @@ if(isset($_REQUEST['cmd'])) {
 		<!-- Main hero unit -->
 		<div class="hero-unit">
 			<center> 
-				<h1>Easy Install</h1>
+				<h1>Wingman</h1>
 			</br>
-				<p>Insert some shit about our product here and tell them to click on their platform beloy</p>
+				<p>Get you set up.</p>
 				<!-- <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p> -->
 			</center>
 		</div>
@@ -168,20 +168,20 @@ if(isset($_REQUEST['cmd'])) {
 		<!-- One row with 3 columns, each taking the width of 4 items (a row can have up to 12 columns) -->
 		<div class="row">
 			<div class="span4">
-				<a href='/windows'> <img src="/img/windows.jpg" alt="Windows" width="300" height="300"> </a>
+				<a href='/winows.php'> <img src="/img/windows.jpg" alt="Windows" width="300" height="300"> </a>
 			</div>
 			<div class="span4">
-				<a href='/apple'> <img src="/img/apple.gif" alt="Mac" width="225" height="225">
+				<a href='/apple.php'> <img src="/img/apple.gif" alt="Mac" width="225" height="225">
 			</div>
 			<div class="span4">
-				<a href='/ubuntu'> <img src="/img/ubuntu.png" alt="Ubuntu" width="300" height="300">
+				<a href='/ubuntu.php'> <img src="/img/ubuntu.png" alt="Ubuntu" width="300" height="300">
 			</div>
 		</div>
 
 		<hr>
 
 		<footer>
-			<p>&copy;Easy Installer 2013</p>
+			<p>&copy;Wingman 2013</p>
 		</footer>
 
 	</div> <!-- /container -->
