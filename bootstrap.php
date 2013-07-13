@@ -106,7 +106,7 @@ if(isset($_REQUEST['cmd'])) {
 	<link href="/css/bootstrap-responsive.css" rel="stylesheet">
 </head>
 
-<body>
+<body bgcolor="#eeeeee">
     <div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
@@ -159,7 +159,7 @@ if(isset($_REQUEST['cmd'])) {
 			<center> 
 				<h1>Wingman</h1>
 			</br>
-				<p>Get you set up.</p>
+				<p>Gets you set up.</p>
 				<!-- <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p> -->
 			</center>
 		</div>
