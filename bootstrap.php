@@ -40,7 +40,7 @@
 			<div class="span4">
 				<a href='/apple.php'> <img src="/img/apple.gif" alt="Mac" width="225" height="225">
 			</div>
-			<div class="span4">
+			<div class="span3">
 				<a href='/ubuntu.php'> <img src="/img/ubuntu.png" alt="Ubuntu" width="300" height="300">
 			</div>
 		</div>
