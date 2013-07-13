@@ -13,15 +13,11 @@ $user = "";
 $user_pk = "";
 $errorMsg = "";
 $request = "";
-$savedGroups = array();
 
 //See if this person has an open session
 if(isset($_SESSION['user_pk'])) {
 	$user = $_SESSION['user'];
 	$user_pk = $_SESSION['user_pk'];
-	
-	//Get the user's saved groups
-	$savedGroups = getPackageGroups($user);
 	
 	//See if the user is requesting anything
 	if(isset($_REQUEST['cmd'])) {
@@ -34,14 +30,6 @@ if(isset($_SESSION['user_pk'])) {
 			//Send the user to the home screen
 			header("Location: http://174.34.170.64/bootstrap.php");
 		}
-		
-		//See if the user is requesting to load a saved group
-		if($request == "loadGroup") {
-			
-		}
-		
-		//See if the user is requesting to save a new group
-			//Make sure to update the list of saved groups
 	}
 } else { //If they don't, send them to the sign in page
 	header("Location: http://174.34.170.64/signin.php");
@@ -110,6 +98,7 @@ if(isset($_SESSION['user_pk'])) {
 		   <div class="nav-collapse collapse">
             <form class="navbar-form pull-right" method='post' action='selection.php'>
               <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">TESTING THIS OUT <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
                 <li><a href="#">Another action</a></li>
@@ -193,7 +182,6 @@ if(isset($_SESSION['user_pk'])) {
               <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="python" /></span>
               Python
             </td>
-		   </tr>
       </table>
       <div id="buildVessel" class="proceed">
         <input type='submit' class="btn btn-large btn-success" value="Build Project">
