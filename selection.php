@@ -30,6 +30,11 @@ if(isset($_SESSION['user_pk'])) {
 			//Send the user to the home screen
 			header("Location: http://174.34.170.64/bootstrap.php");
 		}
+		
+		//See if the user is requesting to save a project
+		if($request == "saveProject") {
+			
+		}
 	}
 } else { //If they don't, send them to the sign in page
 	header("Location: http://174.34.170.64/signin.php");
@@ -119,8 +124,9 @@ if(isset($_SESSION['user_pk'])) {
                 </ul>
               </li>
             </ul>
-            <form class="navbar-form pull-right">
+            <form class="navbar-form pull-right" method='post' action='selection.php'>
               <button type="submit" class="btn">Logout</button>
+			  <input type='hidden' name='cmd' value='logout' />
             </form>
           </div><!--/.nav-collapse -->
         </div>
@@ -195,8 +201,11 @@ if(isset($_SESSION['user_pk'])) {
       </table>
       <div id="buildVessel" class="proceed">
         <input type='submit' class="btn btn-large btn-success" value="Build Project">
-		<input type='submit' class="btn btn-large btn-success" value="Save Project">
-      </div>
+		<form class="saveButton" action="selection.php" method="post">
+			<input type='submit' class="btn btn-large btn-success" value="Save Project">
+			<input type='hidden' name='cmd' value='saveProject' />
+		</form>
+	  </div>
 </form></div>
 
     </div> 

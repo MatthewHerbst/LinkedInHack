@@ -89,7 +89,7 @@ $final_file = "curl -s http://174.34.170.64/temp/$id > /tmp/wingscript; sudo bas
                 </ul>
               </li>
             </ul>
-            <form class="navbar-form pull-right" method='post' action='selection.php'>
+            <form class="navbar-form pull-right" method='post' action='process.php'>
               <button type="submit" class="btn">Logout</button>
 			  <input type='hidden' name='cmd' value='logout' />
             </form>
