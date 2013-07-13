@@ -156,31 +156,25 @@ if(isset($_REQUEST['cmd'])) {
   <form accept-charset="UTF-8" action="/profiles" class="form-horizontal" id="vessels_form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Wfmr4E6zD+a2qbdV3bdlAUxSKPdDsYoj/exCbQX+KGg=" /></div>
   <h1>Build a Vessel: <span>Vessel 1</span><input html="{:value=&gt;&quot;Vessel 1&quot;, :placeholder=&gt;&quot;Vessel 1&quot;}" id="profile_title" name="profile[title]" size="30" type="text" />
     <input type="text" placeholder="Vessel 1" value="Vessel 1"></h1>
-      <table border=0 class="vesselOptions">
-        <tr>
-          <td width="175">
-            <span class="servicebox"><input id="profile_services_" name="profile[services][]" type="checkbox" value="google_apps" /></span>
-            <img alt="Google_logo_32" html="{:style=&gt;&quot;height:32px; width:32px;&quot;, :class=&gt;&quot;img-polaroid&quot;}" src="/assets/google_logo_32.png" />
-            Google Apps
-          </td>
-          <td width="150">
-            <span class="servicebox"><input id="profile_services_" name="profile[services][]" type="checkbox" value="hipchat" /></span>
-            <img alt="Hipchat_logo_32" html="{:style=&gt;&quot;height:32px; width:32px;&quot;, :class=&gt;&quot;img-polaroid&quot;}" src="/assets/hipChat_logo_32.png" />
-            HipChat
-          </td>
-          <td width="150">
-            <span class="servicebox"><input id="profile_services_" name="profile[services][]" type="checkbox" value="yammer" /></span>
-            <img alt="Yammer_logo_32" html="{:style=&gt;&quot;height:32px; width:32px;&quot;, :class=&gt;&quot;img-polaroid&quot;}" src="/assets/yammer_logo_32.png" />
-            Yammer
-          </td>
-          <td width="175">
-            <span class="servicebox"><input id="profile_services_" name="profile[services][]" type="checkbox" value="github" /></span>
-            <img alt="Github_logo_32" html="{:style=&gt;&quot;height:32px; width:32px;&quot;, :class=&gt;&quot;img-polaroid&quot;}" src="/assets/github_logo_32.png" />
-            Github
-          </td>
-        </tr>
-      </table>
       <table border=0 class="vesselOptions goods">
+        <tr>
+            <td>
+              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="Google_Apps" /></span>
+              Google_Apps
+            </td>
+            <td>
+              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="HipChat" /></span>
+              HipChat
+            </td>
+            <td>
+              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="Yammer" /></span>
+              Yammer
+            </td>
+            <td>
+              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="github" /></span>
+              GitHub
+            </td>
+          </tr>
           <tr>
             <td>
               <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="droplr" /></span>
