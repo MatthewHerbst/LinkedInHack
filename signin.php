@@ -9,10 +9,7 @@ include "db.php";
 connectDB();
 
 //Login variables
-$user = "";
-$user_pk = "";
 $errorMsg = "";
-$message = "";
 $request = "";
 $goingTo = "";
 
@@ -21,47 +18,47 @@ if(isset($_REQUEST['os'])) {
 	$goingTo = $_REQUEST['os'];
 }
 
-/*
 //See if this person has an open session
 if(isset($_SESSION['user_pk'])) {
 	header("Location: http://174.34.170.64/selection.php");
-} else {
+	
+	//Check if the user wants to logout
+	if(isset($_REQUEST['cmd'])) {
+		if($_REQUEST['cmd'] == "logout") {
+			unset($_SESSION['user_pk']);
+		}
+	}
+} else { //They need to sign in or register
 	//See if the user is requesting anything
 	if(isset($_REQUEST['cmd'])) {
 		$request = $_REQUEST['cmd'];
 		
-		//Check if they are asking to logout
-		if($request == "logout") {
-			unset($_SESSION['user_pk']);
-		} else if($request == "login") {
-			$u = $_REQUEST['username'];
-			$p = $_REQUEST['password'];
-			
+		//Get the entered username and password
+		$u = $_REQUEST['username'];
+		$p = $_REQUEST['password'];
+		
+		//Check if the user wants to login
+		if($request == "login") {			
 			//Ensure both a username and a password were entered
 			if(empty($u)) {
 				$errorMsg = "Please enter a username";
 			} else if(empty($p)) {
 				$errorMsg = "Please enter a password";
-			} else {
+			} else { //Check the entered username and password
+				//Get the user's primary key (if they exist)
 				$pk = validateUser($u, $p);
 				if($pk != -1) {
-					//Initialize session variables
+					//User exists, initialize session variables
 					$_SESSION['user'] = $u;
 					$_SESSION['user_pk'] = $pk;
-					$user = $u;
-					$user_pk = $pk;
-					$message = "Welcome " . $user;
 					
+					//Send the user to the selection page
 					header("Location: http://174.34.170.64/selection.php");
-				}
-				else {
+				} else {
 					$errorMsg = "Invalid Username/Password";
 				}
-			}
-		} else if($request == "register") {
-			$u = $_REQUEST['new_username'];
-			$p = $_REQUEST['new_password'];
-			
+			} //Check if the user wants to register
+		} else if($request == "register") {	
 			//Ensure both a username and a password were entered
 			if(empty($u)) {
 				$errorMsg = "Please enter a username";
@@ -70,7 +67,7 @@ if(isset($_SESSION['user_pk'])) {
 			} else {
 				//See if that username is already taken
 				if(checkUserExist($u)) {
-					$errorMsg = "Username " . $user . " already exists.";
+					$errorMsg = "Username " . $u . " already exists.";
 				} else {
 					$added = addUser($u, $p); //Returns 1 if succesful or an error message otherwise
 					if($added == 1) {
@@ -80,9 +77,9 @@ if(isset($_SESSION['user_pk'])) {
 						if($pk != -1) {
 							$_SESSION['user_pk'] = $pk;
 							$_SESSION['user'] = $u;
-							$user = $u;
-							$user_pk = $pk;
-							$message = "Welcome. Thanks for registering" . $user . "!";
+							
+							//Send the user to the selection page
+							header("Location: http://174.34.170.64/selection.php");
 						} else {
 							$errorMsg = "Usernames and passwords must be alphanumeric";
 						}
@@ -92,10 +89,8 @@ if(isset($_SESSION['user_pk'])) {
 				}
 			}
 		}
-	} else {
-		//Do nothing
 	}
-}*/
+}
 ?>
 
 <!DOCTYPE html>
