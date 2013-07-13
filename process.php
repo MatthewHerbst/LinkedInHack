@@ -55,7 +55,7 @@ $final_file = "curl -s http://174.34.170.64/temp/$id > /tmp/wingscript; sudo bas
 	<link href="/css/bootstrap.css" rel="stylesheet">
 	<style type="text/css">
 		body {
-			padding-top: 300px;
+			padding-top: 100px;
 			padding-bottom: 30px;
 		}
 	</style>
