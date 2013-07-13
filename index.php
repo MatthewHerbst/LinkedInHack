@@ -1,10 +1,10 @@
 <?php
 //Start session
 session_start();	
-if (isset($_REQUEST['cmd']) && isset($_REQUEST['table']) && $_REQUEST['cmd'] == "settable") {
+/*if(isset($_REQUEST['cmd']) && isset($_REQUEST['table']) && $_REQUEST['cmd'] == "settable") {
 	$_SESSION['TABLE_PREFIX'] = $_REQUEST['table'];
 	unset($_SESSION['user_pk']);
-}
+}*/
 
 //Handle database connections
 include "db.php";
@@ -20,11 +20,11 @@ $message = "";
 $request="";
 
 //Check if a command is coming from browser
-if (isset($_REQUEST['cmd'])) {
+if(isset($_REQUEST['cmd'])) {
 	$request=$_REQUEST['cmd'];
 }
 
-if ($request == "logout") {
+if($request == "logout") {
 	unset($_SESSION['user_pk']);
 }
 
@@ -109,6 +109,8 @@ if(isset($_SESSION['user_pk'])) {
 	<div id="loginError">
 		<?php print $errorMsg; ?>
 	</div>
+	<?  /******************************** Display login form **********************/
+	if ($user_pk==""): ?>
 	<div id="login">
 		Please Login:
 		<form method='post' action='index.php'>
@@ -117,7 +119,8 @@ if(isset($_SESSION['user_pk'])) {
 			<input type='submit' value='Login'/>
 			<input type='hidden' name='cmd' value='login' />
 		</form>
-		<br />Not a member? Register now!
+		<br />
+		Not a member? Register now!
 		<form method='post' action='index.php'>
 			<label id='new_user'>Name</label><input type='text' name='new_username' maxlength="30" id='new_username'/>
 			<label id='new_pass'>Password</label><input type='password' name='new_password' maxlength="30" id='new_password'/>
@@ -128,6 +131,6 @@ if(isset($_SESSION['user_pk'])) {
 	<div id="windows"></div>
 	<div id="mac"></div>
 	<div id="linux"></div>
-	<div id="footer"></div>
+	<div id="footer">	</div>
 </body>
 </html>
