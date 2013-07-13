@@ -98,7 +98,6 @@ if(isset($_SESSION['user_pk'])) {
 		   <div class="nav-collapse collapse">
             <form class="navbar-form pull-right" method='post' action='selection.php'>
               <li class="dropdown">
-                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Packages <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
                 <li><a href="#">Another action</a></li>
