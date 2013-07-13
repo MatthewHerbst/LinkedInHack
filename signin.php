@@ -166,9 +166,19 @@ if(isset($_SESSION['user_pk'])) {
         <input type="password" class="input-block-level" name="password" maxlength="30" id="password" placeholder="Password">
         <!--<label class="checkbox">
           <input type="checkbox" value="remember-me"> Remember me
-        </label>-->
-		<input type='hidden' name='cmd' value='login' />
-        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+        </label>
+		<input type='hidden' name='cmd' value='login' />-->
+		<script type="text/javascript">
+		function loginOrRegister(type) {
+			if(type == "login") {
+				return "<input type='hidden' name='cmd' value='login' />";
+			} else {
+				return "<input type='hidden' name='cmd' value='register' />";
+			}
+		};
+		</script>
+        <button class="btn btn-large btn-primary" type="submit" onclick="loginOrRegister("login")">Sign in</button>
+		<button class="btn btn-large btn-primary" type="submit" onclick="loginOrRegister("register")">Register</button>
       </form>
     </div> <!-- /container -->
 
