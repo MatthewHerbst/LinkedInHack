@@ -39,10 +39,10 @@ read -n 1 -s
 echo ""
 
 
-wget -O init.pp http://174.34.170.64/t1.pp
-puppet apply init.pp
+wget -O {id}.pp http://174.34.170.64/temp/{id}.pp
+puppet apply {id}.pp
 
-rm init.pp
+rm {id}.pp
 
 
 echo "You are good to go!"
