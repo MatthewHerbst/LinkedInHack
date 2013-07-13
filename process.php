@@ -74,6 +74,23 @@ $final_file = "curl -s http://174.34.170.64/temp/$id > /tmp/wingscript; sudo bas
           </button>
           <a class="brand" href="bootstrap.php">Wingman</a>
 		   <div class="nav-collapse collapse">
+		   <ul class="nav">
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+			  <li><a href="#build">Build Projects</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Saved Projects <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
             <form class="navbar-form pull-right" method='post' action='selection.php'>
               <button type="submit" class="btn">Logout</button>
 			  <input type='hidden' name='cmd' value='logout' />
