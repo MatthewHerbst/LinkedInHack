@@ -19,7 +19,16 @@
 </head>
 
 <body bgcolor="#EEEEEE">
-
+		<div class="navbar-inner">
+			<div class="container">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="brand" href="#">Wingman</a>
+			</div>
+		</div>
     <div class="container">
 
 		<!-- Main hero unit -->
