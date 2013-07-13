@@ -1,0 +1,3 @@
+package {'g++':
+	ensure => present
+}

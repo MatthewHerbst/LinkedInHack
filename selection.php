@@ -181,16 +181,16 @@ if(isset($_REQUEST['cmd'])) {
               vim
             </td>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="alfred" /></span>
-              Alfred
+              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="chromium-browser" /></span>
+              Chrome
             </td>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="dropbox" /></span>
-              Dropbox
+              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="git" /></span>
+              Git
             </td>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="virtualbox" /></span>
-              Virtualbox
+              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="g++" /></span>
+              G++
             </td>
           </tr>
           <tr>
@@ -209,96 +209,6 @@ if(isset($_REQUEST['cmd'])) {
             <td>
               <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="crashplan" /></span>
               Crashplan
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="chrome" /></span>
-              Chrome
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="vlc" /></span>
-              Vlc
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="things" /></span>
-              Things
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="textmate" /></span>
-              Textmate
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="sublime_text_2" /></span>
-              Sublime text 2
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="spotify" /></span>
-              Spotify
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="sparrow" /></span>
-              Sparrow
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="skype" /></span>
-              Skype
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="screen" /></span>
-              Screen
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="rdio" /></span>
-              Rdio
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="onepassword" /></span>
-              Onepassword
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="minecraft" /></span>
-              Minecraft
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="handbrake" /></span>
-              Handbrake
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="caffeine" /></span>
-              Caffeine
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="airfoil" /></span>
-              Airfoil
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="imagemagick" /></span>
-              Imagemagick
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="gitx" /></span>
-              Gitx
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="clojure" /></span>
-              Clojure
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="csshx" /></span>
-              Csshx
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="vagrant" /></span>
-              Vagrant
             </td>
           </tr>
       </table>

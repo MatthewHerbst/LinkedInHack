@@ -1,0 +1,3 @@
+package {'valac':
+	ensure => present
+}
