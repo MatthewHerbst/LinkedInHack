@@ -55,8 +55,7 @@ if(isset($_SESSION['user_pk'])) {
 					//Send the user to the selection page
 					header("Location: http://174.34.170.64/selection.php");
 				} else {
-					//$errorMsg = "Invalid Username/Password";
-					echo "<script type='text/javascript'>document.getElementById('errorMessage').innerHTML = 'Invalid username/password';</script>";
+					$errorMsg = "Invalid Username/Password";
 				}
 			} //Check if the user wants to register
 		} else if($request == "register") {	
@@ -158,6 +157,7 @@ if(isset($_SESSION['user_pk'])) {
     <div class="container">
       <form class="form-signin" method='post' action='signin.php'>
         <h2 class="form-signin-heading">Please sign in</h2>
+		<!-- TODO:// Make the error message show up -->
 		<p id="errorMessage"></p>
         <input type="text" class="input-block-level" name="username" maxlength="30" id="username" placeholder="Username">
         <input type="password" class="input-block-level" name="password" maxlength="30" id="password" placeholder="Password">
