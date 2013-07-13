@@ -127,63 +127,54 @@ if(isset($_SESSION['user_pk'])) {
     <input type="text"  value="ProjectX"></h2>
 	<input type='hidden' name='id' value='<?php echo uniqid(); ?>'>
       <table border=0 class="vesselOptions goods">
-        <tr>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="vlc" /></span>
-              VLC
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="ruby" /></span>
-              Ruby
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="php5" /></span>
-              PHP
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="vim" /></span>
-              Vim
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="chromium-browser" /></span>
-              Chrome
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="git" /></span>
-              Git
-            </td>
-
-          </tr>
-          <tr>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="valac" /></span>
-              Valac
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="nodejs" /></span>
-              Node.js
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="sublime" /></span>
-              Sublime Text
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="mongodb" /></span>
-              Mongodb
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="g++" /></span>
-              G++
-            </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="packages[]" type="checkbox" value="python" /></span>
-              Python
-            </td>
-		   </tr>
+	  <?php
+		$packages = getPackages();
+		$columnInterval = count($packages) / 4;
+	  ?>
+	  <tr>
+	  <?php
+		for($i = 0; $i < $columnInterval * 1; ++$i) {
+			echo "
+			<td>
+              <span class='servicebox'><input id='profile_apps_' name='packages[]' type='checkbox' value='" . $packages[$i][0] . "' /></span>
+              " . $packages[$i][1] . "
+            </td>";
+		}
+	  ?>
+      </tr>
+      <tr>
+      <?php
+		for($i = columnInterval; $i < $columnInterval * 2; ++$i) {
+			echo "
+			<td>
+              <span class='servicebox'><input id='profile_apps_' name='packages[]' type='checkbox' value='" . $packages[$i][0] . "' /></span>
+              " . $packages[$i][1] . "
+            </td>";
+		}
+	  ?> 
+      </tr>
+      <tr>
+      <?php
+		for($i = columnInterval * 2; $i < $columnInterval * 3; ++$i) {
+			echo "
+			<td>
+              <span class='servicebox'><input id='profile_apps_' name='packages[]' type='checkbox' value='" . $packages[$i][0] . "' /></span>
+              " . $packages[$i][1] . "
+            </td>";
+		}
+	  ?> 
+      </tr>
+      <tr>
+      <?php
+		for($i = columnInterval * 3; $i < count($packages); ++$i) {
+			echo "
+			<td>
+              <span class='servicebox'><input id='profile_apps_' name='packages[]' type='checkbox' value='" . $packages[$i][0] . "' /></span>
+              " . $packages[$i][1] . "
+            </td>";
+		}
+	  ?>       
+	  </tr>
       </table>
       <div id="buildVessel" class="proceed">
         <input type='submit' class="btn btn-large btn-success" value="Build Project">

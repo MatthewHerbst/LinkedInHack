@@ -121,6 +121,27 @@ function addUser($user, $password) {
 }
 
 /*
+Get a list of all packages and their associated IDs
+*/
+function getPackages() {
+	global $PACKAGE_TABLE;
+	
+	$sql = "select * from " . $PACKAGE_TABLE;
+	$q = mysql_query($sql);
+	if(mysql_error()) {
+		return "Error getting supported packages";
+	}
+	
+	//Make the data useful
+	$result = array();
+	while($r = mysql_fetch_array($q)) {
+		$temp = array($r[0], $r[1]); //ID, packageName
+		array_push($result, $temp);
+	}
+	return $result;
+}
+
+/*
 Creates a saved group of packages to be associated with a specific user.
 Returns 1 if succes, or the error message otherwise.
 */
@@ -170,7 +191,7 @@ function getPackageGroups($user) {
 	$results = array();
 	while($r = mysql_fetch_array($q)) {
 		$temp = array($r[0], $r[1]);
-		array_push($result, $temp);
+		array_push($result, $temp); //id, groupname
 	}
 	return $result;
 }
