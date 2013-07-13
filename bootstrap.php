@@ -107,6 +107,7 @@ if(isset($_REQUEST['cmd'])) {
 </head>
 
 <body>
+	<!--
     <div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
@@ -140,18 +141,20 @@ if(isset($_REQUEST['cmd'])) {
 						<button type="submit" class="btn">Sign in</button>
 						<button type="submit" class="btn">Register</button>
 					</form>
-				</div><!--/.nav-collapse -->
+				</div>
 			</div>
 		</div>
-    </div>
+    </div> <-->
 
     <div class="container">
 
 		<!-- Main hero unit for a primary marketing message or call to action -->
 		<div class="hero-unit">
-			<h1>Easy Install</h1>
-			<p>Insert some shit here about our product</p>
-			<p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+			<center> 
+				<h1>Easy Install</h1>
+				<p>Insert some shit here about our product</p>
+				<p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+			</center>
 		</div>
 
 		<!-- Example row of columns -->
@@ -160,17 +163,17 @@ if(isset($_REQUEST['cmd'])) {
 				<a href='#'> <img src="/img/windows.jpg" alt="Windows" width="300" height="300"> </a>
 			</div>
 			<div class="span4">
-				<img src="/img/apple.gif" alt="Mac" width="225" height="225">
+				<a href='#'> <img src="/img/apple.gif" alt="Mac" width="225" height="225">
 			</div>
 			<div class="span4">
-				<img src="/img/ubuntu.png" alt="Ubuntu" width="300" height="300">
+				<a href='#'> <img src="/img/ubuntu.png" alt="Ubuntu" width="300" height="300">
 			</div>
 		</div>
 
 		<hr>
 
 		<footer>
-			<p>&copy; Company 2013</p>
+			<p>&copy;Easy Installer 2013</p>
 		</footer>
 
 	</div> <!-- /container -->
