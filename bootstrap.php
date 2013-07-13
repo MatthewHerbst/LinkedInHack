@@ -19,7 +19,7 @@
 </head>
 
 <body bgcolor="#EEEEEE">
-    <div class="container">
+    <div class="container" bgcolor="#FFFFFF">
 
 		<!-- Main hero unit -->
 		<div class="hero-unit">

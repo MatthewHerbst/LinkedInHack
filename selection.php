@@ -154,8 +154,8 @@ if(isset($_REQUEST['cmd'])) {
 <center>
 <div class="vessel">
   <form accept-charset="UTF-8" action="/profiles" class="form-horizontal" id="vessels_form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Wfmr4E6zD+a2qbdV3bdlAUxSKPdDsYoj/exCbQX+KGg=" /></div>
-  <h1>Build a Vessel: <span>Vessel 1</span><input html="{:value=&gt;&quot;Vessel 1&quot;, :placeholder=&gt;&quot;Vessel 1&quot;}" id="profile_title" name="profile[title]" size="30" type="text" />
-    <input type="text" placeholder="Vessel 1" value="Vessel 1"></h1>
+  <h1>Setup Project: <span>Project 1</span><input html="{:value=&gt;&quot;Project 1&quot;, :placeholder=&gt;&quot;Project 1&quot;}" id="profile_title" name="profile[title]" size="30" type="text" />
+    <input type="text" placeholder="Orihect 1" value="Project 1"></h1>
       <table border=0 class="vesselOptions goods">
         <tr>
             <td>
