@@ -107,7 +107,7 @@ if(isset($_REQUEST['cmd'])) {
 </head>
 
 <body bgcolor="#EEEEEE">
-    <div class="navbar navbar-inverse navbar-fixed-top">
+ 				<!--   <div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
 				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -116,7 +116,7 @@ if(isset($_REQUEST['cmd'])) {
 					<span class="icon-bar"></span>
 				</button>
 				<a class="brand" href="#">Wingman</a>
-				<!-- <div class="nav-collapse collapse">
+				 <div class="nav-collapse collapse">
 					<ul class="nav">
 						<li class="active"><a href="#">Home</a></li>
 						<li><a href="#about">About</a></li>
@@ -147,10 +147,10 @@ if(isset($_REQUEST['cmd'])) {
 							<input type='hidden' name='cmd' value='logout' />
 						<?php endif; ?>
 					</form>
-				</div> -->
+				</div> 
 			</div>
 		</div>
-    </div>
+    </div> -->
 
     <div class="container">
 
