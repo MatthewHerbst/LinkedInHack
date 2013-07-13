@@ -41,7 +41,7 @@
 				<a href='/apple.php'> <img src="/img/apple.gif" alt="Mac" width="225" height="225">
 			</div>
 			<div class="span3">
-				<a href='/ubuntu.php'> <img src="/img/ubuntu.png" alt="Ubuntu" width="300" height="300">
+				<a href='/ubuntu.php'> <img src="/img/ubuntu.png" alt="Ubuntu" width="325" height="325">
 			</div>
 		</div>
 	</div> <!-- /container -->
