@@ -172,8 +172,9 @@ if(isset($_SESSION['user_pk'])) {
 			}
 		};
 		</script>
-        <button class="btn btn-large btn-primary" type="submit" onclick="loginOrRegister("login")">Sign in</button>
-		<button class="btn btn-large btn-primary" type="submit" onclick="loginOrRegister("register")">Register</button>
+        <button class="btn btn-large btn-primary" type="submit" onclick="loginOrRegister("login")>Sign in</button>
+		<button class="btn btn-large btn-primary" type="submit" onclick="loginOrRegister("register")>Register</button>
+		
       </form>
     </div> <!-- /container -->
 
