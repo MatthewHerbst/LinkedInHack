@@ -40,7 +40,7 @@
 				<a href='/signin.php?os=linux'> <img src="/img/ubuntu.png" alt="Ubuntu" width="325" height="325"> </a>
 			</div>
 			<div class="span4">
-				<a href='/signin.php?os=osx'> <img src="/img/apple.gif" alt="Mac" width="225" height="225">	</a>
+				<center> <a href='/signin.php?os=osx'> <img src="/img/apple.gif" alt="Mac" width="225" height="225">	</a> </center>
 			</div>
 		</div>
 	</div> <!-- /container -->
