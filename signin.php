@@ -175,10 +175,6 @@ if(isset($_REQUEST['cmd'])) {
 		else:
 	?>
 	<?php header("Location: http://174.34.170.64/selection.php"); ?>
-	<!--<script type="text/javascript">
-		//Send the user to the page they wanted
-		window.location = "http://www.htmlcodes.me/"
-	</script>-->
 	<?php endif; ?>
     </div> <!-- /container -->
 

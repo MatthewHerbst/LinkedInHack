@@ -8,81 +8,29 @@ include "db.php";
 //Connect to the database
 connectDB();
 
-//Login variables
+//Variables
 $user = "";
 $user_pk = "";
 $errorMsg = "";
 $message = "";
 $request = "";
 
-//Check if a command is coming from browser
-
-
 //See if this person has an open session
-if(isset($_SESSION['user_pk'])) {
+if(!isset($_SESSION['user_pk'])) {
 	$user = $_SESSION['user'];
 	$user_pk = $_SESSION['user_pk'];
-}
-
-//See if the user is requesting anything
-if(isset($_REQUEST['cmd'])) {
-	$request = $_REQUEST['cmd'];
 	
-	//Check if they are asking to logout
-	if($request == "logout") {
-		unset($_SESSION['user_pk']);
-	} else if($request == "Login") {
-		$u = $_REQUEST['username'];
-		$p = $_REQUEST['password'];
+	//See if the user is requesting anything
+	if(isset($_REQUEST['cmd'])) {
+		$request = $_REQUEST['cmd'];
 		
-		//Ensure both a username and a password were entered
-		if(empty($u)) {
-			$errorMsg = "Please enter a username";
-		} else if(empty($p)) {
-			$errorMsg = "Please enter a password";
-		} else {
-			$pk = validateUser($u, $p);
-			if($pk > 0) {
-				$_SESSION['user'] = $u;
-				$_SESSION['user_pk'] = $pk;
-				$user = $u;
-				$user_pk = $pk;
-				$message = "Welcome " . $user;
-			}
-			else {
-				$errorMsg = "Invalid User/Password";
-			}
-		}
-	} else if($request == "Register") {
-		$u = $_REQUEST['new_username'];
-		$p = $_REQUEST['new_password'];
-		
-		//Ensure both a username and a password were entered
-		if(empty($u)) {
-			$errorMsg = "Please enter a username";
-		} else if(empty($p)) {
-			$errorMsg = "Please enter a password";
-		} else {
-			//See if that username is already taken
-			if(checkUserExist($u)) {
-				$errorMsg = "Username " . $user . " already exists.";
-			} else {
-				$added = addUser($u, $p); //Returns 1 if succesful or an error message otherwise
-				if($added == 1) {
-					$pk = validateUser($u, $p);
-					$_SESSION['user_pk'] = $pk;
-					$_SESSION['user'] = $u;
-					$user = $u;
-					$user_pk = $pk;
-					$message = "Welcome. Thanks for registering" . $user . "!";
-				} else {
-					$errorMsg = $added;
-				}
-			}
+		if($request == "logout") {
+			unset($_SESSION['user_pk']);
+			header("Location: http://174.34.170.64/signin.php");
 		}
 	}
-} else {
-	//Do nothing
+} else { //If they don't, send them to the sign in page
+	header("Location: http://174.34.170.64/signin.php");
 }
 ?>
 
