@@ -139,7 +139,7 @@ if(isset($_REQUEST['cmd'])) {
 						if($user_pk == ""): ?> 
 							<input class="span2" type="text" name='username' maxlength="30" id='username' placeholder="Username">
 							<input class="span2" type="password" name='password' maxlength="30" id='password' placeholder="Password">
-							<button type="submit" class="btn">Sign in</button>
+							<input type="submit" class="btn"><!--Sign in</button>-->
 							<button type="submit" class="btn">Register</button>
 							<input type='hidden' name='cmd' value='login' />
 						<?php //Show logout option
