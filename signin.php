@@ -14,6 +14,7 @@ $user_pk = "";
 $errorMsg = "";
 $message = "";
 $request = "";
+$goingTo = "";
 
 //Check if a command is coming from browser
 
@@ -42,7 +43,8 @@ if(isset($_REQUEST['cmd'])) {
 			$errorMsg = "Please enter a password";
 		} else {
 			$pk = validateUser($u, $p);
-			if($pk > 0) {
+			if($pk != -1) {
+				//Initialize session variables
 				$_SESSION['user'] = $u;
 				$_SESSION['user_pk'] = $pk;
 				$user = $u;
@@ -50,7 +52,7 @@ if(isset($_REQUEST['cmd'])) {
 				$message = "Welcome " . $user;
 			}
 			else {
-				$errorMsg = "Invalid User/Password";
+				$errorMsg = "Invalid Username/Password";
 			}
 		}
 	} else if($request == "Register") {
@@ -70,11 +72,17 @@ if(isset($_REQUEST['cmd'])) {
 				$added = addUser($u, $p); //Returns 1 if succesful or an error message otherwise
 				if($added == 1) {
 					$pk = validateUser($u, $p);
-					$_SESSION['user_pk'] = $pk;
-					$_SESSION['user'] = $u;
-					$user = $u;
-					$user_pk = $pk;
-					$message = "Welcome. Thanks for registering" . $user . "!";
+					
+					//Check if the validation returned valid
+					if($pk != -1) {
+						$_SESSION['user_pk'] = $pk;
+						$_SESSION['user'] = $u;
+						$user = $u;
+						$user_pk = $pk;
+						$message = "Welcome. Thanks for registering" . $user . "!";
+					} else {
+						$errorMsg = "Usernames and passwords must be alphanumeric";
+					}
 				} else {
 					$errorMsg = $added;
 				}
@@ -134,7 +142,9 @@ if(isset($_REQUEST['cmd'])) {
   </head>
 
   <body>
-
+	<?php //Give the user the option to login if they aren't
+		if($user_pk == ""):
+	?>
     <div class="container">
 
       <form class="form-signin">
@@ -146,7 +156,15 @@ if(isset($_REQUEST['cmd'])) {
         </label>-->
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
       </form>
-
+	<?php
+		else:
+	?>
+	<?php header("Location: " + $goingTo . ".php"); ?>
+	<!--<script type="text/javascript">
+		//Send the user to the page they wanted
+		window.location = "http://www.htmlcodes.me/"
+	</script>-->
+	<?php endif; ?>
     </div> <!-- /container -->
 
     <!-- Le javascript
