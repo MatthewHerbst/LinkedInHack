@@ -150,7 +150,7 @@ if(isset($_REQUEST['cmd'])) {
     </div>
   
 
-<div class="container">
+<div class="container" bgcolor="#FFFFFFF">
 <center>
 <div class="vessel">
   <form accept-charset="UTF-8" action="/profiles" class="form-horizontal" id="vessels_form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Wfmr4E6zD+a2qbdV3bdlAUxSKPdDsYoj/exCbQX+KGg=" /></div>
