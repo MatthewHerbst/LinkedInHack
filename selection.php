@@ -36,13 +36,15 @@ if(isset($_SESSION['user_pk'])) {
 			$projectName = $_REQUEST['projectName'];
 			
 			//Get a list of all checked boxes on the page
-			$boxes = $("input[type=checkbox][checked]");
+			//$boxes = $("input[type=checkbox][checked]");
 			
 			$packages = array();
-						
+				
+			/*				
 			for($boxes as $package) {
 				array_push($packages, $package.value);
 			}
+			*/
 			
 			
 			createProject($user, $projectName, $packages);
