@@ -70,6 +70,7 @@ function checkUserExist($user) {
 	//Check if there was an error running the query
 	if(mysql_error()) {
 		print "Error checking if username " . $user . " exists. Please contact the site administrator.";
+		print mysql_error;
 		return false;
 	}
 	
