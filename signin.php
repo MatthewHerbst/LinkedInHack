@@ -23,76 +23,75 @@ if(isset($_REQUEST['os'])) {
 
 //See if this person has an open session
 if(isset($_SESSION['user_pk'])) {
-	$user = $_SESSION['user'];
-	$user_pk = $_SESSION['user_pk'];
-}
-
-//See if the user is requesting anything
-if(isset($_REQUEST['cmd'])) {
-	$request = $_REQUEST['cmd'];
-	
-	//Check if they are asking to logout
-	if($request == "logout") {
-		unset($_SESSION['user_pk']);
-	} else if($request == "login") {
-		$u = $_REQUEST['username'];
-		$p = $_REQUEST['password'];
+	header("Location: http://174.34.170.64/selection.php");
+} else {
+	//See if the user is requesting anything
+	if(isset($_REQUEST['cmd'])) {
+		$request = $_REQUEST['cmd'];
 		
-		//Ensure both a username and a password were entered
-		if(empty($u)) {
-			$errorMsg = "Please enter a username";
-		} else if(empty($p)) {
-			$errorMsg = "Please enter a password";
-		} else {
-			$pk = validateUser($u, $p);
-			if($pk != -1) {
-				//Initialize session variables
-				$_SESSION['user'] = $u;
-				$_SESSION['user_pk'] = $pk;
-				$user = $u;
-				$user_pk = $pk;
-				$message = "Welcome " . $user;
-			}
-			else {
-				$errorMsg = "Invalid Username/Password";
-			}
-		}
-	} else if($request == "register") {
-		$u = $_REQUEST['new_username'];
-		$p = $_REQUEST['new_password'];
-		
-		//Ensure both a username and a password were entered
-		if(empty($u)) {
-			$errorMsg = "Please enter a username";
-		} else if(empty($p)) {
-			$errorMsg = "Please enter a password";
-		} else {
-			//See if that username is already taken
-			if(checkUserExist($u)) {
-				$errorMsg = "Username " . $user . " already exists.";
+		//Check if they are asking to logout
+		if($request == "logout") {
+			unset($_SESSION['user_pk']);
+		} else if($request == "login") {
+			$u = $_REQUEST['username'];
+			$p = $_REQUEST['password'];
+			
+			//Ensure both a username and a password were entered
+			if(empty($u)) {
+				$errorMsg = "Please enter a username";
+			} else if(empty($p)) {
+				$errorMsg = "Please enter a password";
 			} else {
-				$added = addUser($u, $p); //Returns 1 if succesful or an error message otherwise
-				if($added == 1) {
-					$pk = validateUser($u, $p);
-					
-					//Check if the validation returned valid
-					if($pk != -1) {
-						$_SESSION['user_pk'] = $pk;
-						$_SESSION['user'] = $u;
-						$user = $u;
-						$user_pk = $pk;
-						$message = "Welcome. Thanks for registering" . $user . "!";
-					} else {
-						$errorMsg = "Usernames and passwords must be alphanumeric";
-					}
+				$pk = validateUser($u, $p);
+				if($pk != -1) {
+					//Initialize session variables
+					$_SESSION['user'] = $u;
+					$_SESSION['user_pk'] = $pk;
+					$user = $u;
+					$user_pk = $pk;
+					$message = "Welcome " . $user;
+				}
+				else {
+					$errorMsg = "Invalid Username/Password";
+				}
+			}
+		} else if($request == "register") {
+			$u = $_REQUEST['new_username'];
+			$p = $_REQUEST['new_password'];
+			
+			//Ensure both a username and a password were entered
+			if(empty($u)) {
+				$errorMsg = "Please enter a username";
+			} else if(empty($p)) {
+				$errorMsg = "Please enter a password";
+			} else {
+				//See if that username is already taken
+				if(checkUserExist($u)) {
+					$errorMsg = "Username " . $user . " already exists.";
 				} else {
-					$errorMsg = $added;
+					$added = addUser($u, $p); //Returns 1 if succesful or an error message otherwise
+					if($added == 1) {
+						$pk = validateUser($u, $p);
+						
+						//Check if the validation returned valid
+						if($pk != -1) {
+							$_SESSION['user_pk'] = $pk;
+							$_SESSION['user'] = $u;
+							$user = $u;
+							$user_pk = $pk;
+							$message = "Welcome. Thanks for registering" . $user . "!";
+						} else {
+							$errorMsg = "Usernames and passwords must be alphanumeric";
+						}
+					} else {
+						$errorMsg = $added;
+					}
 				}
 			}
 		}
+	} else {
+		//Do nothing
 	}
-} else {
-	//Do nothing
 }
 ?>
 
