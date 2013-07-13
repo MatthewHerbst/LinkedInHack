@@ -321,15 +321,20 @@ a:focus {
 }
 
 .span5 {
-  width: 380px;
+  width: 300px;
+  margin-right: -40px;
+  margin-left: 50px;
 }
 
 .span4 {
   width: 300px;
+  margin-left: 10px;
 }
 
 .span3 {
-  width: 220px;
+  width: 225px;
+  margin-left: 10px;
+  margin-top: 15px;
 }
 
 .span2 {
@@ -6124,7 +6129,7 @@ a.badge:focus {
   font-weight: 200;
   line-height: 30px;
   color: inherit;
-  background-color: #c0c0c0;
+  background-image: url('/img/mooning.png');
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
@@ -6166,6 +6171,28 @@ a.badge:focus {
   position: fixed;
 }
 
+.form-signin {
+  margin-top: 100px;
+}
+
 body {
-    background-color: #666666;
+    background-image: url('/img/grey_wash_wall.png');
+}
+
+.servicebox {
+    padding-right:12px;
+}
+
+.servicebox input {
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
+}
+
+.vesselOptions {
+    font-size: 18px;
+    margin-top: 60px;
+    margin-left: 30px;
+    width: 800px;
 }

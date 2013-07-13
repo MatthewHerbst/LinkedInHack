@@ -126,6 +126,7 @@ if(isset($_REQUEST['cmd'])) {
         -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
                 box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        margin-top: 100px;
       }
       .form-signin .form-signin-heading,
       .form-signin .checkbox {
@@ -144,9 +145,27 @@ if(isset($_REQUEST['cmd'])) {
   </head>
 
   <body>
+<<<<<<< HEAD
 	<?php //Give the user the option to login if they aren't
 		if($user_pk == ""):
 	?>
+=======
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="bootstrap.php">Wingman</a>
+        </div>
+      </div>
+    </div>
+  
+
+>>>>>>> 506a8ce6e5516b641d73a16e6cf28fa747198d9e
     <div class="container">
 
       <form class="form-signin" method='post' action='signin.php'>
