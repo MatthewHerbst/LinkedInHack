@@ -152,6 +152,7 @@ if(isset($_REQUEST['cmd'])) {
 		<div class="hero-unit">
 			<center> 
 				<h1>Easy Install</h1>
+			</br>
 				<p>Insert some shit here about our product</p>
 				<p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
 			</center>
