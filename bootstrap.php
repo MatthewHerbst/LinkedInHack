@@ -99,8 +99,8 @@ if(isset($_REQUEST['cmd'])) {
 	<link href="/css/bootstrap.css" rel="stylesheet">
 	<style type="text/css">
 		body {
-			padding-top: 60px;
-			padding-bottom: 40px;
+			padding-top: 30px;
+			padding-bottom: 30px;
 		}
 	</style>
 	<link href="/css/bootstrap-responsive.css" rel="stylesheet">
