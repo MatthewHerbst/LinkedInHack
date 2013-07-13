@@ -107,8 +107,6 @@ if(isset($_SESSION['user_pk'])) {
 	<div id="loginError">
 		<?php print $errorMsg; ?>
 	</div>
-	<?  /******************************** Display login form **********************/
-	if ($user_pk==""): ?>
 	<div id="login">
 		Please Login:
 		<form method='post' action='index.php'>
