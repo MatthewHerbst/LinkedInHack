@@ -118,10 +118,6 @@ if(!isset($_SESSION['user_pk'])) {
               <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="php5" /></span>
               PHP
             </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="python" /></span>
-              Python
-            </td>
           </tr>
           <tr>
             <td>
@@ -136,15 +132,12 @@ if(!isset($_SESSION['user_pk'])) {
               <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="git" /></span>
               Git
             </td>
-            <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="g++" /></span>
-              G++
-            </td>
+
           </tr>
           <tr>
             <td>
-              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="notational_velocity" /></span>
-              Notational velocity
+              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="valac" /></span>
+              Valac
             </td>
             <td>
               <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="wunderlist" /></span>
@@ -154,14 +147,23 @@ if(!isset($_SESSION['user_pk'])) {
               <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="googleearth" /></span>
               Googleearth
             </td>
+          </tr>
+          <tr>
             <td>
               <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="crashplan" /></span>
               Crashplan
             </td>
-          </tr>
+            <td>
+              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="g++" /></span>
+              G++
+            </td>
+            <td>
+              <span class="servicebox"><input id="profile_apps_" name="profile[apps][]" type="checkbox" value="python" /></span>
+              Python
+            </td>
       </table>
       <div id="buildVessel" class="proceed">
-        <button class="btn btn-large btn-success" type="button">Build Vessel</button>
+        <button class="btn btn-large btn-success" type="button">Build Project</button>
       </div>
 </form></div>
 

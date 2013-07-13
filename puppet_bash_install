@@ -30,9 +30,9 @@ echo '    \/  \/   |_|_| |_|\__, |_| |_| |_|\__,_|_| |_|'
 echo '                       __/ |                      '
 echo '                      |___/          '
 echo ''
-echo "    Hello! I\'m going to set up this machine for you. It might take me a bit"
-echo "    of time before I\'m done, but you\'ll end up with a happy machine by the"
-echo "    end of it."
+echo "    Hello! This machine is going to be set up for you now. It might take a while"
+echo "    before I'm done, but you'll end up with a happy machine by the"
+echo "    end of it :-)"
 echo "    Ready to get started? Brutalize a key with your favorite finger."
 read -n 1 -s
 
