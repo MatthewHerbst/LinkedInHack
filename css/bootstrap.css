@@ -323,7 +323,7 @@ a:focus {
 .span5 {
   width: 300px;
   margin-right: -40px;
-  margin-left: 40px;
+  margin-left: 50px;
 }
 
 .span4 {
@@ -334,7 +334,7 @@ a:focus {
 .span3 {
   width: 225px;
   margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .span2 {
